@@ -1,0 +1,60 @@
+ion-title{
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1.5px;
+}
+.intro{
+    height: 190px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px;
+}
+.intro img{
+    width: 150px;
+}
+.intro-title{
+    color: white;
+    font-family: 'Abel', sans-serif;
+}
+.intro-subtitle{
+    font-family: 'Abel', sans-serif;
+    color: white;
+}
+.add-btn{
+    background-color: transparent;
+    color: #fff;
+    font-size: 14px;
+    padding:0px;
+    border-color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+    float: left;
+    margin-right: 20px;
+}
+.option-boxes{
+    margin: 15px;
+    // width: 100%;
+    text-align: center;
+    padding: 30px;
+    // border: 1px solid #cccccc;
+    border-radius: 10px;
+}
+.opt-box{
+    // background-color: #000;
+    height: 130px;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    // margin-left: 10px;
+    // margin-right: 10px;
+    text-align: center;
+    border: 1px solid #cccccc;
+    box-shadow: 2px 2px 5px #e6e6e6;
+}
+.opt-box img, .opt-box p{
+    
+}
+.opt-box p{
+    font-family: 'Titillium Web', sans-serif;
+}

@@ -1,0 +1,157 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      
+      <ion-col size="3"class="logo-container">
+        <div class="station-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/76_Orange_Logo.svg">
+        </div>
+      </ion-col>
+
+      <ion-col size="9" class="name-container">
+        <ion-row class="station-name"><h3>76 gas station</h3></ion-row>
+        <ion-row class="station-rate">
+          <ion-col size="4">
+            <h5>
+              <i class="fas fa-star stared"></i>
+              <i class="fas fa-star stared"></i>
+              <i class="fas fa-star stared"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </h5>
+          </ion-col>
+          <ion-col size="4"><h5>(Reviews | 24)</h5></ion-col>
+        </ion-row>
+        <ion-row class="station-address">
+          <h6> <ion-icon name="pin"></ion-icon> Front of Reda Mosque, Nozha street, Giza, Egypt</h6>
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="12" class="separator">
+      </ion-col>
+
+      <ion-col size="12" class="station-work">
+        <ion-row>
+          <ion-col size="6">
+            <span><i class="far fa-clock"></i> working hours: </span><span class="station-hours">24h</span>
+          </ion-col>
+          <ion-col size="3" offset="3">
+              <span class="station-status">open now</span>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <ion-col size="12" class="station-map">
+        <ion-button class="" expand="block" color="tertiary"><a routerLink="/members/gas-stations/map" routerDirection="forward">open in map</a><i class="far fa-map"></i>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="12" class="img-slider">
+          <ion-slides pager="true">
+            <ion-slide class="station-img">
+              <img src="https://farm1.staticflickr.com/630/21293146282_c34413516e_b.jpg">
+            </ion-slide>
+            <ion-slide class="station-img">
+              <img src="https://farm6.staticflickr.com/5685/21334623275_6a6dfb28e4_b.jpg">
+            </ion-slide>
+            <ion-slide class="station-img">
+              <img src="https://fronterasdesk.org/sites/default/files/styles/special_story_images_aspect_switcher/public/field/image/Gas%20Station%202.JPG?itok=lYhEa8eF">
+            </ion-slide>
+          </ion-slides>
+      </ion-col>
+
+      <ion-col size="12" class="separator">
+      </ion-col>
+
+      <ion-col size="12" color="light">
+        <ion-toolbar color="light">
+          <ion-segment [(ngModel)]="station" (ionChange)="segmentChanged($event)" color="tertiary">
+            <ion-segment-button href="#petrol" value="petrol">
+              <ion-label>Petrol</ion-label>
+            </ion-segment-button>
+            <ion-segment-button href="#services" value="services">
+              <ion-label>Services</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-toolbar>
+      </ion-col>
+
+      <ion-col size="12" [ngSwitch]="station" class="station-properties">
+        <ion-list *ngSwitchCase="'petrol'">
+          
+          <ion-item>
+            <ion-col size="8" offset="1">
+              <label class="petrol-label">Gas</label>
+            </ion-col>
+            <ion-col size="3" class="property-availability">
+              <i class="fas fa-check-circle"></i>
+            </ion-col>
+          </ion-item>
+
+          <ion-item>
+            <ion-col size="8" offset="1">
+              <label class="petrol-label">Solar</label>
+            </ion-col>
+            <ion-col size="3" class="property-availability">
+              <i class="fas fa-check-circle"></i>
+            </ion-col>
+          </ion-item>
+
+          <ion-item>
+            <ion-col size="8" offset="1">
+              <label class="petrol-label">Petrol 80</label>
+            </ion-col>
+            <ion-col size="3" class="property-availability">
+              <span class="station-property-unavailable">unavailable</span>
+            </ion-col>
+          </ion-item>
+
+          <ion-item>
+            <ion-col size="8" offset="1">
+              <label class="petrol-label">Petrol 90</label>
+            </ion-col>
+            <ion-col size="3" class="property-availability">
+              <i class="fas fa-check-circle"></i>
+            </ion-col>
+          </ion-item>
+
+          <ion-item>
+            <ion-col size="8" offset="1">
+              <label class="petrol-label">Petrol 92</label>
+            </ion-col>
+            <ion-col size="3" class="property-availability">
+              <i class="fas fa-check-circle"></i>
+            </ion-col>
+          </ion-item>
+
+          <ion-item>
+            <ion-col size="8" offset="1">
+              <label class="petrol-label">Petrol 95</label>
+            </ion-col>
+            <ion-col size="3" class="property-availability">
+              <span class="station-property-unavailable">unavailable</span>
+            </ion-col>
+          </ion-item>
+
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'services'">
+
+          <ion-item>
+            <ion-row>services</ion-row>
+          </ion-item>
+
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

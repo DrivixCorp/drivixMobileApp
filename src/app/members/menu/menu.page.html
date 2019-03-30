@@ -1,0 +1,54 @@
+<ion-split-pane>
+
+  <ion-menu contentId="content">
+    <ion-header no-shadow no-border>
+      <ion-toolbar color="secondary">
+          <img class="logo" src="../../../assets/images/1.1.png" alt="drivix logo"/>
+        <ion-title>CAR SERVICES APPLICATION</ion-title>
+        <h5><i class="far fa-user"></i> username: aliaamr2110</h5>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of pages"> 
+          <ion-item [routerLink]="p.url" [class.active-item]="selectedPath === p.url" routerDirection="root">
+            <ion-label class="page-label">
+              {{ p.title }}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <ion-item (click)="menuItemHandler()"><ion-label class="page-label">Services</ion-label><ion-icon name="arrow-dropright" class="drop-icon"></ion-icon></ion-item>
+          <ion-item-group submenu [class.visible]="showSubmenu" class="menu-grp">
+            <ion-item submenu-item>
+              <i class="fas fa-circle"></i>
+              <ion-label class="page-label">Winch Service</ion-label>
+            </ion-item>
+            <ion-item submenu-item>
+              <i class="fas fa-circle"></i>
+              <ion-label class="page-label">Gas Stations</ion-label>
+            </ion-item>
+            <ion-item submenu-item>
+              <i class="fas fa-circle"></i>
+              <ion-label class="page-label">Mechanics</ion-label></ion-item>
+            <ion-item submenu-item>
+              <i class="fas fa-circle"></i>
+              <ion-label class="page-label">Spare Parts Shops</ion-label>
+            </ion-item>
+          </ion-item-group>
+
+        <!--Log out-->
+        <ion-item (click)="sign_out()">
+          <ion-label class="page-label" color="primary">
+            Sign Out <i class="fas fa-sign-out-alt"></i>
+          </ion-label>
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="content" main></ion-router-outlet>
+</ion-split-pane>

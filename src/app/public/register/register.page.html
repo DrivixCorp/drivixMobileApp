@@ -1,0 +1,58 @@
+<ion-header no-shadow no-border>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding>
+
+    <div class="intro">
+      <img class="logo" src="../../../assets/images/Logo-yello.png" alt="drivix logo"/>
+      <h1 class="register-subtitle">JOIN US !</h1>
+    </div>
+
+    <div [formGroup]="registration_form" class="register-form">
+        <ion-item>
+          <ion-label>Username </ion-label>
+          <ion-input [(ngModel)]="data.name" type="text" formControlName="name"></ion-input>
+        </ion-item>
+        <span class="error-message" *ngIf="registration_form.controls['name'].hasError('required') && (registration_form.controls['name'].dirty || registration_form.controls['name'].touched)">This field is required</span>
+        <span class="error-message" *ngIf="registration_form.controls['name'].hasError('minlength') && (registration_form.controls['name'].dirty || registration_form.controls['name'].touched)">Enter at least 3 characters</span>
+        <span class="error-message" *ngIf="registration_form.controls['name'].hasError('maxlength') && (registration_form.controls['name'].dirty || registration_form.controls['name'].touched)">Enter at most 15 characters</span>
+        <ion-item>
+          <ion-label>Email Address </ion-label>
+          <ion-input [(ngModel)]="data.email" type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <span class="error-message" *ngIf="registration_form.controls['email'].hasError('required') && (registration_form.controls['email'].dirty || registration_form.controls['email'].touched)">This field is required</span>
+        <span class="error-message" *ngIf="registration_form.controls['email'].hasError('pattern') && (registration_form.controls['email'].dirty || registration_form.controls['email'].touched)">Please enter valid mail</span>
+        <ion-item>
+          <ion-label>Password </ion-label>
+          <ion-input [(ngModel)]="data.password" type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <span class="error-message" *ngIf="registration_form.controls['password'].hasError('required') && (registration_form.controls['password'].dirty || registration_form.controls['password'].touched)">This field is required</span>
+        <span class="error-message" *ngIf="registration_form.controls['password'].hasError('minlength') && (registration_form.controls['password'].dirty || registration_form.controls['password'].touched)">Enter at least 8 characters</span>
+        <span class="error-message" *ngIf="registration_form.controls['password'].hasError('maxlength') && (registration_form.controls['password'].dirty || registration_form.controls['password'].touched)">Enter at most 15 characters</span>
+        <ion-item>
+          <ion-label>Confirm Password </ion-label>
+          <ion-input [(ngModel)]="data.confirm_pass" type="password" formControlName="confirm_pass"></ion-input>
+        </ion-item>
+        <span class="error-message" *ngIf="registration_form.controls['confirm_pass'].hasError('required') && (registration_form.controls['confirm_pass'].dirty)">This field is required</span>
+        <div class="error-message" *ngIf="registration_form.controls.confirm_pass.errors?.MatchPassword">Password not match</div>
+        
+        <div class="errors">
+            <p class="error-message" color="primary" *ngIf="errors">{{error_msg}}</p>
+        </div>
+
+        <ion-button (click)="submitForm()" class="register-btn" expand="block" color="secondary">
+            Register<ion-icon name="return-right"></ion-icon>
+        </ion-button>
+
+    </div>
+
+    <div class="login-link">
+      Already have an account? <a href="/login"><a class="login-link" routerLink="/login" routerDirection="forward">Login</a></a>
+    </div>
+
+</ion-content>

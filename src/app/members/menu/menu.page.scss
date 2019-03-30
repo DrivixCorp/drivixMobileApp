@@ -1,0 +1,54 @@
+ion-header{
+    margin: auto;
+    text-align: center
+}
+.active-item{
+    border-left: 8px solid var(--ion-color-primary);
+}
+.logo{
+    width:250px;
+    margin: auto;
+}
+ion-title{
+    font-size: 15px;
+    font-family: 'Abel', sans-serif;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+.page-label{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 15px;
+}
+h5{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+}
+h5 i{
+    color: #ffb200;
+    margin-right: 5px;
+}
+.page-label i{
+    margin-left: 8px;
+}
+ion-item-group[submenu] {
+    overflow: hidden;
+    display: block;
+    height: 0;
+    transition: 1s ease;
+    transition: height 1s linear;
+    padding-left: 20%;
+    &.visible {
+        height: inherit;
+        transition: 1s ease;
+        // this is just sample value, calculate how much space you need for your menu items
+    }
+  }
+.drop-icon{
+    float: right;
+    color: #ffb200;
+}
+.menu-grp .fa-circle{
+    font-size: 5px;
+    color: #ffb200;
+    margin-right: 10px;
+}

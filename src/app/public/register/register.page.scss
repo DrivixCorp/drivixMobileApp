@@ -1,0 +1,56 @@
+ion-header{
+    box-shadow: none;
+}
+.intro{
+    margin: auto;
+    text-align: center;
+}
+.logo{
+    width: 100px;
+}
+.register-subtitle{
+    font-family: 'Raleway', sans-serif;
+}
+.register-form ion-label, ion-input{
+    font-family: 'Titillium Web', sans-serif;
+    color: #3a3c4d;
+    font-size: 14px;
+}
+.register-form ion-input{
+    color: black;
+}
+.register-form .register-btn{
+    font-family: 'Titillium Web', sans-serif;
+    --border-radius: 0px;
+    --box-shadow:none;
+    margin-top: 20px;
+}
+.register-btn ion-icon{
+    margin-left: 5px;
+}
+.login-link{
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+}
+.register-form ion-item .item-inner {
+    border: none !important;
+    box-shadow: none !important;
+  }
+.register-form ion-item{
+    margin-bottom: 15px;
+}
+.error-message{
+    font-size: 13px;
+    color: var(--ion-color-danger-shade);
+    font-family: 'Titillium Web', sans-serif;
+    text-align: right;
+    margin:0px;
+    float: right;
+}
+.errors{
+    height: 30px;
+    margin:0px;
+}

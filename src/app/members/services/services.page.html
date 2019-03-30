@@ -1,0 +1,56 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light">SERVICES</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides autoplay="5000" loop="true" speed="100" #Slider (ionSlidesDidLoad)="slidesDidLoad(Slider)" pager="true" class="service-slider">
+    <ion-slide class="slide1">
+      <h1>with <strong>DRIVIX</strong> you can get <br>
+        what you want anywhere anytime</h1>
+    </ion-slide>
+    <ion-slide class="slide2">
+      <h1>Get fast and reliable services <br><strong>just in one tuch</strong></h1>
+    </ion-slide>
+    <ion-slide class="slide3">
+      <h1><strong>All the services you need</strong> just in one application</h1>
+    </ion-slide>
+  </ion-slides>
+
+  <h2 class="services-subtitle">Choose a service :</h2>
+  
+  <div class="services">
+    <div class="service">
+      <img src="../../../assets/images/services/jumper.png">
+      <h5 class="service-name">Spare Parts</h5>
+    </div>
+    <div class="service">
+      <img src="../../../assets/images/services/car.png">
+      <h5 class="service-name">Winch Service</h5>
+    </div>
+    <br>
+    <div class="service">
+      <img src="../../../assets/images/services/gasoline.png">
+      <h5 class="service-name">Gas Stations</h5>
+    </div>
+    <div class="service">
+        <img src="../../../assets/images/services/cogwheel.png">
+        <h5 class="service-name">Mechanics</h5>
+    </div>
+    <br>
+    <div class="service">
+      <img src="../../../assets/images/services/car-service.png">
+      <h5 class="service-name">Parking Location</h5>
+    </div>
+    <div class="service">
+      <img src="../../../assets/images/services/question.png">
+      <h5 class="service-name">Ask Question</h5>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,83 @@
+ion-title{
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1.5px;
+}
+.services{
+    margin: auto;
+    text-align: center;
+}
+.service{
+    height: 130px;
+    width: 130px;
+    margin: 15px;
+    padding: 6px;
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 2px 2px 2px 1px #d9d9d9;
+}
+.service img{
+    width: 70px;
+}
+.service-img-spareparts{
+    background: url('../../../assets/images/services/car.jpg') no-repeat center center / cover;
+}
+.service-img-winch{
+    background: url('../../../assets/images/services/tow_truck_kit8-net.png') no-repeat center center / cover;
+}
+.service-img-mechanics{
+    background: url('../../../assets/images/services/1.png') no-repeat center center / cover;
+}
+.service-img-gasstation{
+    background: url('../../../assets/images/services/gas_station_kit8-net.png') no-repeat center center / cover;
+}
+.service-name{
+    margin:10px;
+    color: #331f00;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+
+}
+.service-slider ion-slide{
+    height: 300px;
+    float: left;
+}
+.slide1{
+    background: url('../../../assets/images/services/4.jpg') no-repeat center center / cover;
+}
+ion-slide strong{
+    color: #ffb200;
+    text-shadow: 1px 1px 1px #404040;
+}
+.slide2{
+    background: url('../../../assets/images/services/2.jpg') no-repeat center center / cover;
+}
+.slide3{
+    background: url('../../../assets/images/services/3.jpg') no-repeat center center / cover;
+}
+ion-slide h1{
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    margin-top: 170px;
+}
+.slide-zoom {
+    position: absolute;
+    top: 0;
+    left: 0;
+ }
+.services-subtitle{
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+    background-color: #1b1b1b;
+    border-radius: 0px;
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;   
+    width: 80%;
+}
