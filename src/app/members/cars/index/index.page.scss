@@ -58,9 +58,21 @@ ion-content {
 .carList-value{
     display: block;
     color: #595959;
-    font-weight: normal;    
+}
+.carList-value i{
+    font-size: 3em;
 }
 .carList-operations ion-button{
     --box-shadow:none;
     --border-radius: 0px;
+}
+.emptyList{
+    padding: 6px;
+    color: #666666;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+    box-shadow: 10px 10px 33px -20px rgba(0,0,0,0.75);
 }

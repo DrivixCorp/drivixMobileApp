@@ -10,30 +10,51 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      
+
       <ion-col size="3"class="logo-container">
         <div class="station-logo">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/76_Orange_Logo.svg">
+          <img src="{{ gasStation.icon }}">
         </div>
       </ion-col>
 
       <ion-col size="9" class="name-container">
-        <ion-row class="station-name"><h3>76 gas station</h3></ion-row>
+        <ion-row class="station-name"><h3>{{ gasStation.name }}</h3></ion-row>
         <ion-row class="station-rate">
           <ion-col size="4">
             <h5>
-              <i class="fas fa-star stared"></i>
-              <i class="fas fa-star stared"></i>
-              <i class="fas fa-star stared"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
+              <span *ngFor="let star of rateRange; let i = index">
+                <i class="fas fa-star rated" *ngIf="gasStation.google_rate >= (i+1)"></i>
+              </span>
+              <i class="fas fa-star-half-alt rated" *ngIf="gasStation.google_rate%1!=0"></i>
+              <span *ngFor="let star of rateRange; let i = index">
+                <i class="far fa-star" *ngIf="gasStation.google_rate <= (i)"></i>
+              </span>
             </h5>
           </ion-col>
           <ion-col size="4"><h5>(Reviews | 24)</h5></ion-col>
         </ion-row>
         <ion-row class="station-address">
-          <h6> <ion-icon name="pin"></ion-icon> Front of Reda Mosque, Nozha street, Giza, Egypt</h6>
+          <h6> <ion-icon name="pin"></ion-icon> {{ gasStation.address }} | {{ gasStation.city }}</h6>
         </ion-row>
+      </ion-col>
+
+      <ion-col size="12" class="separator">
+      </ion-col>
+
+      <ion-col size="12" class="station-rating">
+        <span class="rate-title">Rate this gas station</span>
+        <span>Tell others what you think</span>
+      </ion-col>
+
+      <ion-col size="12" class="user-rate">
+
+        <span *ngFor="let star of rateRange; let i = index">
+          <ion-icon name="star" size="large" color="primary" *ngIf="data.rate >= (i+1)" (click)="submitRating(i+1)"></ion-icon>
+        </span>
+        <span *ngFor="let star of rateRange; let i = index">
+          <ion-icon name="star-outline" size="large" color="medium" *ngIf="data.rate <= (i)" (click)="submitRating(i+1)"></ion-icon>
+        </span>
+
       </ion-col>
 
       <ion-col size="12" class="separator">
@@ -50,8 +71,11 @@
         </ion-row>
       </ion-col>
 
+      <ion-col size="12" class="separator">
+      </ion-col>
+
       <ion-col size="12" class="station-map">
-        <ion-button class="" expand="block" color="tertiary"><a routerLink="/members/gas-stations/map" routerDirection="forward">open in map</a><i class="far fa-map"></i>
+        <ion-button routerLink="/members/gas-stations/map" routerDirection="forward" expand="block" color="tertiary">open in map<i class="far fa-map"></i>
         </ion-button>
       </ion-col>
 
@@ -88,57 +112,13 @@
       <ion-col size="12" [ngSwitch]="station" class="station-properties">
         <ion-list *ngSwitchCase="'petrol'">
           
-          <ion-item>
+          <ion-item *ngFor="let service of gasStationPetrol">
             <ion-col size="8" offset="1">
-              <label class="petrol-label">Gas</label>
+              <label class="petrol-label">{{ replaceDash(service) | titlecase }}</label>
             </ion-col>
             <ion-col size="3" class="property-availability">
-              <i class="fas fa-check-circle"></i>
-            </ion-col>
-          </ion-item>
-
-          <ion-item>
-            <ion-col size="8" offset="1">
-              <label class="petrol-label">Solar</label>
-            </ion-col>
-            <ion-col size="3" class="property-availability">
-              <i class="fas fa-check-circle"></i>
-            </ion-col>
-          </ion-item>
-
-          <ion-item>
-            <ion-col size="8" offset="1">
-              <label class="petrol-label">Petrol 80</label>
-            </ion-col>
-            <ion-col size="3" class="property-availability">
-              <span class="station-property-unavailable">unavailable</span>
-            </ion-col>
-          </ion-item>
-
-          <ion-item>
-            <ion-col size="8" offset="1">
-              <label class="petrol-label">Petrol 90</label>
-            </ion-col>
-            <ion-col size="3" class="property-availability">
-              <i class="fas fa-check-circle"></i>
-            </ion-col>
-          </ion-item>
-
-          <ion-item>
-            <ion-col size="8" offset="1">
-              <label class="petrol-label">Petrol 92</label>
-            </ion-col>
-            <ion-col size="3" class="property-availability">
-              <i class="fas fa-check-circle"></i>
-            </ion-col>
-          </ion-item>
-
-          <ion-item>
-            <ion-col size="8" offset="1">
-              <label class="petrol-label">Petrol 95</label>
-            </ion-col>
-            <ion-col size="3" class="property-availability">
-              <span class="station-property-unavailable">unavailable</span>
+              <i class="fas fa-check-circle" *ngIf="gasStation[service] == 1"></i>
+              <span class="station-property-unavailable" *ngIf="gasStation[service] == 0">unavailable</span>
             </ion-col>
           </ion-item>
 
@@ -146,8 +126,14 @@
 
         <ion-list *ngSwitchCase="'services'">
 
-          <ion-item>
-            <ion-row>services</ion-row>
+          <ion-item *ngFor="let service of gasStationServices">
+            <ion-col size="8" offset="1">
+              <label class="petrol-label">{{ replaceDash(service) | titlecase }}</label>
+            </ion-col>
+            <ion-col size="3" class="property-availability">
+              <i class="fas fa-check-circle" *ngIf="gasStation[service] == 1"></i>
+              <span class="station-property-unavailable" *ngIf="gasStation[service] == 0">unavailable</span>
+            </ion-col>
           </ion-item>
 
         </ion-list>

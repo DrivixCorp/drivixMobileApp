@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {AuthenticationService} from '../../authentication.service';
+import {AuthenticationService} from '../../api/authentication.service';
 import {NavController, ToastController } from '@ionic/angular';
-import {ProfileService} from '../../profile.service';
+import {ProfileService} from '../../api/profile.service';
 import {Storage} from '@ionic/storage';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 

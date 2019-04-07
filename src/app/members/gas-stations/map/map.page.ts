@@ -4,10 +4,10 @@ import { NavController } from '@ionic/angular';
 import { map } from "rxjs/operators";
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
-import { MapsService } from '../../../maps.service';
+import { MapsService } from '../../../api/maps.service';
 import { GoogleMap } from '@ionic-native/google-maps/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
-import { AuthenticationService } from '../../../authentication.service';
+import { AuthenticationService } from '../../../api/authentication.service';
 
 declare var google;
 
@@ -19,23 +19,23 @@ declare var google;
 export class MapPage implements OnInit {
 
   @ViewChild('map') mapElement: ElementRef;
-  
+
   map: GoogleMap;
   locations : any;
   currentLat : any;
   currentLong : any;
   currentLocation: any;
-  markers = new Array(); 
+  markers = new Array();
   destination : any = 'Egypt';
-  
 
-  constructor(public navCtrl: NavController, private stationsMap: MapsService, 
-    private Auth: AuthenticationService, private storage: Storage, private http: Http , private geolocation: Geolocation) {  
+
+  constructor(public navCtrl: NavController, private stationsMap: MapsService,
+    private Auth: AuthenticationService, private storage: Storage, private http: Http , private geolocation: Geolocation) {
       this.displayGoogleMap();
       this.getMarkers();
   }
-  
-  displayGoogleMap(){
+
+  displayGoogleMap() {
 
     this.geolocation.getCurrentPosition().then((resp) => {
       // get lat and long for current position
@@ -170,7 +170,7 @@ export class MapPage implements OnInit {
   }
 
   // get nearest gas stations and set markers
-  getMarkers(){
+  getMarkers() {
     this.geolocation.getCurrentPosition().then((resp) => {
       
       this.currentLocation = { lat: resp.coords.latitude, long: resp.coords.longitude };
@@ -188,26 +188,25 @@ export class MapPage implements OnInit {
 
   // add Markers
   addMarkersMap(markers){
-    for(let marker of markers){
+    for (let marker of markers) {
 
-      if(!marker.distance){
+      if (!marker.distance) {
         var icon = '../../../assets/images/icons/current-marker.png';
       }
       else{
         var icon = '../../../assets/images/icons/marker.png';
       }
 
-      this.markers.push(marker);
-
       var location = new google.maps.LatLng(marker.lat, marker.long);
-
       marker = new google.maps.Marker({
         map: this.map,
         position: location,
-        title: 'distance : '+marker.distance,
+        title: 'distance : ' + marker.distance,
         animation: google.maps.Animation.DROP,
         icon: icon,
       });
+
+      this.markers.push(marker);
     }
   }
 
@@ -236,8 +235,6 @@ export class MapPage implements OnInit {
   }
 
   async ngOnInit() {
-    // await this.getMarkers();
-    // await this.displayGoogleMap();
   }
 
 }

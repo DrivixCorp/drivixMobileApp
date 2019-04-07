@@ -15,6 +15,7 @@ const routes: Routes = [
       { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
       { path: 'services', loadChildren: '../services/services.module#ServicesPageModule' },
       { path: 'gas-station', loadChildren: '../gas-stations/details/details.module#DetailsPageModule' },
+      { path: 'gas-station-list', loadChildren: '../gas-stations/list/list.module#ListPageModule' },
       { path: 'cars', loadChildren: '../cars/index/index.module#IndexPageModule' },
     ]
   },

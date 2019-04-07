@@ -17,16 +17,21 @@ import { HttpModule } from '@angular/http';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { GoogleMaps } from '@ionic-native/google-maps/ngx';
 
+import { DecimalPipe } from '@angular/common';
+import { ReplaceDashPipe } from './pipes/replace-dash.pipe';
+
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ReplaceDashPipe],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule , HttpModule , HttpClientModule , IonicStorageModule.forRoot()],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule , HttpModule ,
+            HttpClientModule , IonicStorageModule.forRoot()],
   providers: [
     Platform,
     StatusBar,
     SplashScreen,
     GoogleMaps,
     Geolocation,
+    DecimalPipe,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

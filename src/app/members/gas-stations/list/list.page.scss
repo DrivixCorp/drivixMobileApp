@@ -1,0 +1,59 @@
+ion-searchbar{
+  --color: #ffffff;
+  --background: #3171e0;
+  --placeholder-color: #ffffff;
+  --placeholder-font-style: 'Titillium Web', sans-serif;
+}
+.listTitle{
+  color: #000000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.listTitle span{
+  font-size: 13px;
+  font-weight: bold;
+  padding-left: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+ion-item-sliding{
+  margin-bottom: 13px;
+}
+.listItem{
+  white-space: normal;
+  --background: #f2f2f2;
+  border-left: 3px solid #b3b3b3;
+}
+.listItem ion-avatar{
+  background-color: white;
+  box-shadow: -14px 13px 41px -21px rgba(0,0,0,0.98);
+}
+.itemName{
+  color: Black;
+  font-family: 'Raleway', sans-serif;
+}
+.itemAddress{
+  color: #333333;
+  font-family: 'Titillium Web', sans-serif;
+}
+.itemDistance{
+  color: #737373;
+  font-family: 'Titillium Web', sans-serif;
+}
+.notFound{
+  padding: 8px;
+  color: #737373;
+  text-align: center;
+  background-color: #e6e6e6;
+  font-family: 'Titillium Web', sans-serif;
+}
+.searchTitle{
+  color: #df9d04;
+  font-weight: bold;
+  font-family: 'Raleway', sans-serif;
+}
+.searchDescription{
+  color: #b3b3b3;
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+}
+

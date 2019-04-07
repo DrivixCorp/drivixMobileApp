@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, RouterEvent } from '@angular/router';
-import {AuthenticationService} from '../../authentication.service';
+import {AuthenticationService} from '../../api/authentication.service';
 import {NavController} from '@ionic/angular';
 import {Storage} from '@ionic/storage';
 
@@ -30,7 +30,7 @@ export class MenuPage {
     {
       title: 'Cars',
       url: '/members/menu/cars',
-    }
+    },
   ];
 
   constructor(private router: Router , public navCtrl: NavController , private storage: Storage) {
@@ -39,13 +39,11 @@ export class MenuPage {
     });
   }
 
-  // 
   showSubmenu: boolean = false;
 
   menuItemHandler(): void {
     this.showSubmenu = !this.showSubmenu;
   }
-  // 
 
     sign_out() {
       AuthenticationService.User = null;

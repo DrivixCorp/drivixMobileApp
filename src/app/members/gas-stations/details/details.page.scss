@@ -84,3 +84,23 @@
 .property-availability{
     text-align: center
 }
+.station-rate .rated{
+    color: #4c8dff;
+}
+.station-rating{
+    color: #808080;
+    font-size: 13px;
+    font-family: 'Titillium Web', sans-serif;
+}
+.station-rating .rate-title{
+    display: block;
+    color: #df9d04;
+    font-size: 16px;
+}
+.user-rate{
+    margin: auto;
+    text-align: center;
+}
+.user-rate .star-outline{
+    margin: 3px;
+}

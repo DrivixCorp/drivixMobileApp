@@ -26,24 +26,22 @@
         </span>
       </ion-col>
 
-      <ion-col size="10" offset="1" class="carList-container">
+      <ion-col size="10" offset="1" class="carList-container" *ngFor ="let car of carsList; let i = index">
         <ion-row>
-          <ion-col size="4" offset="7" class="carList-total">Total 2</ion-col>
+          <ion-col size="4" offset="7" class="carList-total">Car #{{i+1}}</ion-col>
         </ion-row>
         
         <ion-col size="10" offset="1" class="carList-card">
           <ion-item>
             <ion-label class="carList-brand">
-              Honda <span class="carList-model">Accord </span>
+              {{ car.brand }} <span class="carList-model">{{ car.model }}</span>
             </ion-label>
-            <!-- <ion-icon class="carList-edit" name="create" slot="end"></ion-icon>
-            <ion-icon class="carList-delete" name="trash" slot="end" (click)="presentAlert()"></ion-icon> -->
           </ion-item>
           <ion-item>
             <ion-label>
               <ion-row class="carList-details">
-                <ion-col size="6"> YEAR <span class="carList-value">2012</span></ion-col>
-                <ion-col size="6" class="carList-color"> COLOR <span class="carList-value">red</span></ion-col>
+                <ion-col size="6"> YEAR <span class="carList-value">{{ car.year }}</span></ion-col>
+                <ion-col size="6" class="carList-color"> COLOR <span class="carList-value"><i class="fas fa-circle" [ngStyle]="{'color': car.color}" style="font-size: 3em;"></i></span></ion-col>
               </ion-row>
             </ion-label>
           </ion-item>
@@ -60,37 +58,8 @@
         </ion-col>  
       </ion-col>
 
-      <ion-col size="10" offset="1" class="carList-container">
-
-        <ion-col size="10" offset="1" class="carList-card">
-          <ion-item>
-            <ion-label class="carList-brand">
-              Audi <span class="carList-model">A3 Sedan </span>
-            </ion-label>
-            <!-- <ion-icon class="carList-edit" name="create" slot="end"></ion-icon>
-            <ion-icon class="carList-delete" name="trash" slot="end" (click)="presentAlert()"></ion-icon> -->
-          </ion-item>
-          
-          <ion-item>
-            <ion-label>
-              <ion-row class="carList-details">
-                <ion-col size="6"> YEAR <span class="carList-value">2019</span></ion-col>
-                <ion-col size="6" class="carList-color"> COLOR <span class="carList-value">black</span></ion-col>
-              </ion-row>
-            </ion-label>
-          </ion-item>
-
-          <ion-row class="carList-operations">
-            <ion-col size="6">
-              <ion-button color="medium" expand="full" routerLink="/members/cars/edit" routerDirection="forward"><ion-icon class="" name="create" slot="end"></ion-icon></ion-button>
-            </ion-col>
-            <ion-col size="6">
-              <ion-button color="dark" expand="full"><ion-icon class="" name="trash" slot="end" (click)="presentAlert()"></ion-icon></ion-button>
-            </ion-col>
-          </ion-row>
-
-        </ion-col>  
-
+      <ion-col size="8" offset="2" *ngIf="emptyList" class="emptyList">
+        <h6><i class="fas fa-exclamation"></i> You don't have any cars yet !</h6>
       </ion-col>
 
     </ion-row>

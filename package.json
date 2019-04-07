@@ -28,6 +28,7 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.0.0",
     "@ionic/storage": "^2.2.0",
+    "angular-star-rating": "^4.0.0-beta.3",
     "cordova-android": "7.1.4",
     "cordova-browser": "5.0.4",
     "cordova-plugin-advanced-http": "2.0.4",
@@ -43,6 +44,8 @@
     "cordova-plugin-whitelist": "^1.3.3",
     "cordova-sqlite-storage": "3.1.0",
     "core-js": "^2.5.4",
+    "ionic-rating": "^1.0.6",
+    "ionic3-star-rating": "^1.1.5",
     "rxjs": "~6.3.3",
     "rxjs-compat": "^6.4.0",
     "zone.js": "~0.8.29"

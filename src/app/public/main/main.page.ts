@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NavController} from '@ionic/angular';
 import {Storage} from '@ionic/storage';
-import {AuthenticationService} from '../../authentication.service';
+import {AuthenticationService} from '../../api/authentication.service';
 
 @Component({
   selector: 'app-main',

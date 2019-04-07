@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {NavController} from '@ionic/angular';
-import {AuthenticationService} from '../../authentication.service';
+import {AuthenticationService} from '../../api/authentication.service';
 import {Storage} from '@ionic/storage';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';

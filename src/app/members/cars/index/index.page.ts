@@ -1,5 +1,7 @@
+import {Storage} from '@ionic/storage';
+import { AlertController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
-import {AlertController} from '@ionic/angular';
+import { CarsService } from '../../../api/cars.service';
 
 @Component({
   selector: 'app-index',
@@ -8,9 +10,27 @@ import {AlertController} from '@ionic/angular';
 })
 export class IndexPage implements OnInit {
 
-  constructor(private alertController: AlertController) { }
+  carsList: any = [];
+  emptyList = false;
+
+  constructor(private alertController: AlertController, private carsService: CarsService, private storage: Storage) { }
 
   ngOnInit() {
+    this.getUserCars();
+  }
+
+  getUserCars() {
+    this.storage.get('token').then((val) => {
+      if (val != null) {
+        this.carsService.getUserCars(val).then(data => {
+          if (data.length > 0) {
+            this.carsList = data;
+          } else {
+            this.emptyList = true;
+          }
+        });
+      }
+    });
   }
 
   async presentAlert() {
@@ -34,5 +54,4 @@ export class IndexPage implements OnInit {
     });
     await alert.present();
   }
-  
 }
