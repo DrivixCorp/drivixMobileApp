@@ -48,10 +48,10 @@
         
           <ion-row class="carList-operations">
             <ion-col size="6">
-              <ion-button color="medium" expand="full" routerLink="/members/cars/edit" routerDirection="forward"><ion-icon class="" name="create" slot="end"></ion-icon></ion-button>
+              <ion-button color="medium" expand="full" (click)="updateCar(car.id)" routerDirection="forward"><ion-icon class="" name="create" slot="end"></ion-icon></ion-button>
             </ion-col>
             <ion-col size="6">
-              <ion-button color="dark" expand="full"><ion-icon class="" name="trash" slot="end" (click)="presentAlert()"></ion-icon></ion-button>
+              <ion-button (click)="presentAlert(car)" color="dark" expand="full"><ion-icon class="" name="trash" slot="end"></ion-icon></ion-button>
             </ion-col>
           </ion-row>
           

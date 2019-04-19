@@ -20,7 +20,7 @@
         </ion-item>
 
         <span class="error-message" *ngIf="profile_form.controls['job'].hasError('required') && (profile_form.controls['job'].dirty || profile_form.controls['job'].touched)">Please enter your job</span>
-        <span class="error-message" *ngIf="profile_form.controls['job'].hasError('minLength') && (profile_form.controls['job'].dirty || profile_form.controls['job'].touched)">Ener at least 5 characters</span>
+        <span class="error-message" *ngIf="profile_form.controls['job'].hasError('minLength') && (profile_form.controls['job'].dirty || profile_form.controls['job'].touched)">Enter at least 5 characters</span>
         <span class="error-message" *ngIf="profile_form.controls['job'].hasError('maxLength') && (profile_form.controls['job'].dirty || profile_form.controls['job'].touched)">At most 50 are allowed</span>
         
         <ion-item>
@@ -39,7 +39,7 @@
         </ion-item>
 
         <span class="error-message" *ngIf="profile_form.controls['location'].hasError('required') && (profile_form.controls['location'].dirty || profile_form.controls['location'].touched)">Please enter your address</span>
-        <span class="error-message" *ngIf="profile_form.controls['location'].hasError('minLength') && (profile_form.controls['location'].dirty || profile_form.controls['location'].touched)">Ener at least 5 characters</span>
+        <span class="error-message" *ngIf="profile_form.controls['location'].hasError('minLength') && (profile_form.controls['location'].dirty || profile_form.controls['location'].touched)">Enter at least 5 characters</span>
         <span class="error-message" *ngIf="profile_form.controls['location'].hasError('maxLength') && (profile_form.controls['location'].dirty || profile_form.controls['location'].touched)">At most 25 are allowed</span>
 
         <ion-list>

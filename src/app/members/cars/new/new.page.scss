@@ -58,3 +58,11 @@
     color: black;
     font-weight: bold;
 }
+.error-message{
+    font-size: 13px;
+    color: var(--ion-color-danger-shade);
+    font-family: 'Titillium Web', sans-serif;
+    text-align: right;
+    margin:0px;
+    float: right;
+}

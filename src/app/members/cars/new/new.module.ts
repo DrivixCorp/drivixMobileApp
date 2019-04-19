@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 
 import { NewPage } from './new.page';
 
+import { ReactiveFormsModule } from '@angular/forms';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
 const routes: Routes = [
   {
     path: '',
@@ -19,8 +22,13 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'})
   ],
-  declarations: [NewPage]
+  declarations: [NewPage],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+  ],
 })
 export class NewPageModule {}

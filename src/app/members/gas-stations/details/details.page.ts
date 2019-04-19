@@ -3,6 +3,7 @@ import { NavController } from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { RatesService } from '../../../api/rates.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -11,6 +12,7 @@ import { RatesService } from '../../../api/rates.service';
 })
 export class DetailsPage implements OnInit {
 
+  stationId : any;
   station = 'petrol';
   gasStation = {
     id: 181,
@@ -57,10 +59,12 @@ export class DetailsPage implements OnInit {
 
 
   constructor(public navCtrl: NavController, public ratesService: RatesService, private storage: Storage,
-              public toastController: ToastController) {
+              public toastController: ToastController, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    this.stationId = this.route.snapshot.paramMap.get('stationId');
+    console.log(this.stationId);
     this.getUserReview();
   }
 
@@ -70,7 +74,7 @@ export class DetailsPage implements OnInit {
         this.data.token = val;
         this.data.gas_id = this.gasStation.id;
         this.ratesService.getUserReview(this.data).then(data => {
-          if (!isNaN(data) && typeof data === 'number') {
+          if (typeof(data) === 'number') {
             this.data.rate = data;
           } else {
             this.data.rate = 0;

@@ -24,10 +24,6 @@ export class MenuPage {
       url: '/members/menu/profile',
     },
     {
-      title: 'Gas Station',
-      url: '/members/menu/gas-station',
-    },
-    {
       title: 'Cars',
       url: '/members/menu/cars',
     },

@@ -54,7 +54,7 @@ export class ListPage implements OnInit {
       this.searchService.gasStationSearch(this.searchText).then(data => {
         this.gasStationsList = data;
         console.log(data);
-        if (data.length > 0) {
+        if (Object.keys(data).length > 0) {
           this.notFound = false;
         } else {
           this.notFound = true;
@@ -65,6 +65,10 @@ export class ListPage implements OnInit {
       this.notFound = false;
       this.getGasStationsList();
     }
+  }
+
+  viewGasStation(id) {
+    console.log(id);
   }
 
   ngOnInit() {

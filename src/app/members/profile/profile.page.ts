@@ -35,7 +35,7 @@ export class ProfilePage {
             'location': [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(25)])],
             'gender': [null, Validators.required],
             'phone': [null, Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(25), Validators.pattern('/(0)\d{10}/')])],
-            'DOB': [null,Validators.required],
+            'DOB': [null, Validators.required],
           }, {
             // updateOn: 'blur'
           });

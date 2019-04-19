@@ -26,45 +26,62 @@
 
       <ion-col size="12">
         <ion-row class="car-form">
-          <ion-col size="6">
-            <ion-item>
-              <ion-label position="stacked">Brand</ion-label>
-              <ion-input></ion-input>
-            </ion-item>
-          </ion-col>
+          <div [formGroup]="carFormGroup">
+            <ion-col size="6">
+              <ion-item>
+                <ion-label position="stacked">Brand</ion-label>
+                <ion-input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="car.brand" formControlName="brand"></ion-input>
+              </ion-item>
 
-          <ion-col size="6">
-            <ion-item>
-              <ion-label position="stacked">Model</ion-label>
-              <ion-input></ion-input>
-            </ion-item>
-          </ion-col>
+              <span class="error-message" *ngIf="carFormGroup.controls['brand'].hasError('required') && (carFormGroup.controls['brand'].dirty || carFormGroup.controls['brand'].touched)">Please enter car brand</span>
+              <span class="error-message" *ngIf="carFormGroup.controls['brand'].hasError('maxLength') && (carFormGroup.controls['brand'].dirty || carFormGroup.controls['brand'].touched)">At most 20 character are allowed</span>
 
-          <ion-col size="6">
-            <ion-item>
-              <ion-label position="stacked">Year</ion-label>
-              <ion-input></ion-input>
-            </ion-item>
-          </ion-col>
+            </ion-col>
 
-          <ion-col size="6">
-            <ion-item>
-              <ion-label position="stacked">Color</ion-label>
-              <ion-input></ion-input>
-            </ion-item>
-          </ion-col>
-        </ion-row> 
+            <ion-col size="6">
+              <ion-item>
+                <ion-label position="stacked">Model</ion-label>
+                <ion-input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="car.model" formControlName="model"></ion-input>
+              </ion-item>
+
+              <span class="error-message" *ngIf="carFormGroup.controls['model'].hasError('required') && (carFormGroup.controls['model'].dirty || carFormGroup.controls['model'].touched)">Please enter car model</span>
+              <span class="error-message" *ngIf="carFormGroup.controls['model'].hasError('maxLength') && (carFormGroup.controls['model'].dirty || carFormGroup.controls['model'].touched)">At most 20 character are allowed</span>
+
+            </ion-col>
+
+            <ion-col size="6">
+              <ion-item>
+                <ion-label position="stacked">Year</ion-label>
+                <ion-input type="text" [ngModelOptions]="{standalone: true}" [(ngModel)]="car.year" formControlName="year"></ion-input>
+              </ion-item>
+
+              <span class="error-message" *ngIf="carFormGroup.controls['year'].hasError('required') && (carFormGroup.controls['year'].dirty || carFormGroup.controls['year'].touched)">Please enter the year</span>
+              <span class="error-message" *ngIf="carFormGroup.controls['year'].hasError('maxLength') && (carFormGroup.controls['year'].dirty || carFormGroup.controls['year'].touched)">At most 5 digits are allowed</span>
+              <span class="error-message" *ngIf="carFormGroup.controls['year'].hasError('minLength') && (carFormGroup.controls['year'].dirty || carFormGroup.controls['year'].touched)">At least 4 digits are allowed</span>
+
+            </ion-col>
+
+            <ion-col size="6">
+              <ion-item>
+                <ion-label position="stacked">Color</ion-label>
+                <ion-input type="color" [ngModelOptions]="{standalone: true}" [(ngModel)]="car.color" formControlName="color"></ion-input>
+              </ion-item>
+
+              <span class="error-message" *ngIf="carFormGroup.controls['color'].hasError('required') && (carFormGroup.controls['color'].dirty || carFormGroup.controls['color'].touched)">Please select car color</span>
+
+            </ion-col>
+          </div>
+        </ion-row>
       </ion-col>
 
     </ion-row>
 
     <ion-row>
       <ion-col size="12" class="form-buttons">
-        <ion-button color="primary" expand="block"><label> UPDATE </label> <ion-icon class="save-icon" name="checkmark-circle-outline"></ion-icon></ion-button>
-        <ion-button color="secondary" expand="block">CANCEL<ion-icon name="close"></ion-icon></ion-button>
+        <ion-button color="primary" expand="block" (click)="updateCar()"><label> UPDATE </label> <ion-icon class="save-icon" name="checkmark-circle-outline"></ion-icon></ion-button>
+        <ion-button routerLink="/members/cars" routerDirection="back" color="secondary" expand="block">CANCEL<ion-icon name="close"></ion-icon></ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
 
 </ion-content>
-  

@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import {Component, NgZone, OnInit} from '@angular/core';
+import { CarsService } from '../../../api/cars.service';
+import { AlertController, NavController, ToastController } from '@ionic/angular';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new',
@@ -7,9 +12,57 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewPage implements OnInit {
 
-  constructor() { }
+  data = {
+    token: '',
+    model: '',
+    brand: '',
+    year: '',
+    color: '#ooo', // black as default value
+  };
+
+  carFormGroup: FormGroup;
+
+  constructor(private alertController: AlertController, private carsService: CarsService, private form_builder: FormBuilder,
+              private storage: Storage, public toastController: ToastController, public navCtrl: NavController,
+              private router: Router, public ngZone: NgZone) {
+    this.carFormGroup = form_builder.group({
+      'model' : [null, Validators.compose([Validators.required, Validators.maxLength(20)])],
+      'brand' : [null, Validators.compose([Validators.required, Validators.maxLength(20)])],
+      'year'  : new FormControl(null, Validators.compose([Validators.required, Validators.minLength(4),
+        Validators.maxLength(5)])),
+      'color' : new FormControl(null, Validators.compose([Validators.required])),
+    });
+  }
 
   ngOnInit() {
+  }
+
+  storeCar() {
+    this.storage.get('token').then((val) => {
+      if (val != null) {
+        this.data.token = val;
+        this.carsService.storeCar(this.data).then(data => {
+          if (Object.keys(data).length > 0) {
+
+            this.ngZone.runOutsideAngular(() => {
+              this.router.navigateByUrl('/members/menu/cars');
+            });
+
+          } else {
+            this.presentToastWithOptions();
+          }
+        });
+      }
+    });
+  }
+
+  async presentToastWithOptions() {
+    const toast = await this.toastController.create({
+      duration: 2000,
+      position: 'bottom',
+      message: 'Something went wrong, try again !',
+    });
+    toast.present();
   }
 
 }
