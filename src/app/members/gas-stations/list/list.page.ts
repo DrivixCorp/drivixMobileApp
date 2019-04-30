@@ -2,10 +2,12 @@ import { Storage } from '@ionic/storage';
 import { DecimalPipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MapsService } from '../../../api/maps.service';
-import { Router, NavigationExtras } from '@angular/router';
+import { Router } from '@angular/router';
 import { SearchService } from '../../../api/search.service';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { AuthenticationService } from '../../../api/authentication.service';
+import {MapDirectionModelComponent} from '../../../map-direction-model/map-direction-model.component';
+import {ModalController} from '@ionic/angular';
 
 @Component({
   selector: 'app-list',
@@ -15,13 +17,17 @@ import { AuthenticationService } from '../../../api/authentication.service';
 export class ListPage implements OnInit {
 
   gasStationsList: any = [];
-  searchText: string;
+  searchText: any;
   notFound = false;
   results = true;
 
   constructor(private stationsMap: MapsService, private Auth: AuthenticationService,
               private storage: Storage, private geolocation: Geolocation, private decimalPipe: DecimalPipe,
-              private searchService: SearchService) { }
+              private searchService: SearchService, private readonly router: Router , public modalController: ModalController) { }
+
+  ngOnInit() {
+    this.getGasStationsList();
+  }
 
   getGasStationsList() {
     this.geolocation.getCurrentPosition().then((resp) => {
@@ -31,13 +37,13 @@ export class ListPage implements OnInit {
       this.stationsMap.getNearestGasStations(currentLocation)
           .then(async success => {
             this.gasStationsList = success;
-            console.log(success);
           })
           .catch(err => {
             console.log(err);
           });
     });
   }
+
   calculateDistance(distance) {
     if (distance < 1) {
       distance = distance * 100;
@@ -53,7 +59,6 @@ export class ListPage implements OnInit {
       this.results = false;
       this.searchService.gasStationSearch(this.searchText).then(data => {
         this.gasStationsList = data;
-        console.log(data);
         if (Object.keys(data).length > 0) {
           this.notFound = false;
         } else {
@@ -67,12 +72,20 @@ export class ListPage implements OnInit {
     }
   }
 
-  viewGasStation(id) {
-    console.log(id);
+  openDetailsPage(gasStation) {
+    const stationObj = JSON.stringify(gasStation);
+    this.router.navigate(['/members/gas-station', stationObj]);
   }
 
-  ngOnInit() {
-    this.getGasStationsList();
+  async showMapModule(lat , long) {
+    console.log('lat' + lat + ' - ' + long + long);
+    const modal = await this.modalController.create({
+      component: MapDirectionModelComponent,
+      componentProps: {
+        'destLat': lat,
+        'destLong': long
+      }
+    });
+    return await modal.present();
   }
-
 }

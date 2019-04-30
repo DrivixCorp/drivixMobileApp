@@ -1,0 +1,197 @@
+.logo-container{
+  padding: 10px;
+  height: 150px;
+}
+.station-logo{
+  padding-top: 15px;
+  text-align: center;
+  height: max-content;
+}
+.station-logo img{
+  max-height: -webkit-fill-available;
+}
+.name-container{
+  padding-buttom: 10px;
+}
+.station-name h3{
+  color: #262626;
+  text-align: right;
+  font-family: 'Raleway', sans-serif;
+}
+.station-description span{
+  color: #404040;
+  font-size: 15px;
+  text-align: right;
+  margin-bottom: 10px;
+  font-family: 'Raleway', sans-serif;
+}
+.station-rate h5{
+  font-size: 14px;
+  color: #666666;
+  margin-block-start: auto;
+  font-family: 'Titillium Web', sans-serif;
+}
+.station-rate i{
+  color: #666666;
+}
+.station-rate .stared{
+  color: #ffa31a;
+}
+.station-address h6{
+  color: #808080;
+  margin-block-start: auto;
+  font-family: 'Titillium Web', sans-serif;
+}
+.separator{
+  padding: 0px;
+  margin-top: 20px;
+  background-color: #bfbfbf;
+}
+.station-address ion-icon{
+  color: #4d4d4d
+}
+.station-work{
+  margin-top: 10px;
+  color: #666699;
+  font-family: 'Titillium Web', sans-serif;
+}
+.station-hours{
+  color: #8c8c8c;
+  margin-left: 10px;
+  font-family: 'Titillium Web', sans-serif;
+}
+.station-status{
+  color: #00cc00;
+}
+.img-slider{
+  text-align: center;
+}
+.station-img img{
+  border-radius: 10px;
+}
+.station-map i{
+  margin-left: 10px;
+}
+.station-properties .petrol-label{
+  font-size: 14px;
+  color: #4d4d4d;
+  font-family: 'Titillium Web', sans-serif;
+}
+.station-properties .station-property-available{
+  color: #009933;
+}
+.station-properties .station-property-unavailable{
+  color: #c0392b;
+}
+.property-availability{
+  text-align: center
+}
+.station-rate .rated{
+  color: #4c8dff;
+}
+.station-rating{
+  color: #808080;
+  font-size: 13px;
+  font-family: 'Titillium Web', sans-serif;
+}
+.station-rating .rate-title{
+  display: block;
+  color: #df9d04;
+  font-size: 16px;
+}
+.user-rate{
+  margin: auto;
+  text-align: center;
+}
+.user-rate .star-outline{
+  margin: 3px;
+}
+.label-info{
+  padding: 5px;
+  margin-left: 7px;
+  font-weight: bold;
+  color: whitesmoke;
+  border-radius: 5px;
+  background-color: #40bf80;
+}
+.station-comments-section{
+
+}
+.station-comments-section-title{
+  padding-left: 20px;
+  border-bottom: 2px solid #bababa;
+  //background-color: #bababa;
+}
+.station-comments-section-title span{
+  color: #1a1a1a;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+}
+.station-comment-username{
+  color: #df9d04;
+  font-size: 14px;
+  font-weight: bolder;
+  font-family: 'Titillium Web', sans-serif;
+}
+.station-comment-time{
+  float: right;
+  color: #808080;
+  font-size: 13px;
+  text-align: right;
+  font-family: 'Titillium Web', sans-serif;
+}
+.station-comment-content{
+  color: #333333;
+  font-size: 14.5px;
+  padding-left: 20px;
+  font-family: 'Titillium Web', sans-serif;
+}
+.station-comment-like{
+  float: right;
+  color: #ff4d4d;
+  text-align: right;
+}
+.station-comment-link{
+  display: block;
+  padding-left: 20px;
+}
+.station-comment-link span{
+  color: #808080;
+  font-size: 14px;
+  margin-right: 8px;
+  text-decoration: underline;
+  font-family: 'Raleway', sans-serif;
+}
+.station-comment-like{
+  color: #595959;
+  padding-left: 6px;
+}
+.new-comment-input{
+  padding: 8px;
+  background-color: #e6e6e6;
+  font-family: 'Titillium Web', sans-serif;
+}
+.new-comment-send{
+  color: #3171e0;
+  font-size: 40px;
+}
+.replies{
+  background-color: #f2f2f2;
+}
+.sparePartsShop-active{
+  color: #009933;
+}
+.sparePartsShop-inactive{
+  color: #c0392b;
+}
+.sparePartsShop-times-card{
+  --background: #f2f2f2;
+}
+.no-sparePartsShop-data{
+  margin: auto;
+  text-align: center;
+}
+.no-sparePartsShop-data span{
+  color: #808080;
+  font-family: 'Titillium Web', sans-serif;
+}

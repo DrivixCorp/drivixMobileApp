@@ -29,19 +29,19 @@ export class NewPage implements OnInit {
       'model' : [null, Validators.compose([Validators.required, Validators.maxLength(20)])],
       'brand' : [null, Validators.compose([Validators.required, Validators.maxLength(20)])],
       'year'  : new FormControl(null, Validators.compose([Validators.required, Validators.minLength(4),
-        Validators.maxLength(5)])),
-      'color' : new FormControl(null, Validators.compose([Validators.required])),
+        Validators.maxLength(5), Validators.pattern(/(199\d{1})|([2-9]\d{3})/)])),
+      'color' : new FormControl(null, Validators.compose([Validators.required]))
     });
   }
 
   ngOnInit() {
   }
 
-  storeCar() {
-    this.storage.get('token').then((val) => {
+  async storeCar() {
+    await this.storage.get('token').then(async (val) => {
       if (val != null) {
         this.data.token = val;
-        this.carsService.storeCar(this.data).then(data => {
+        await this.carsService.storeCar(this.data).then(data => {
           if (Object.keys(data).length > 0) {
 
             this.ngZone.runOutsideAngular(() => {

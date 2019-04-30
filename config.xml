@@ -95,4 +95,7 @@
     </plugin>
     <engine name="android" spec="7.1.4" />
     <engine name="browser" spec="5.0.4" />
+    <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
+        <string>This app wants to your location</string>
+    </edit-config>
 </widget>

@@ -35,7 +35,7 @@
 
         <ion-item-sliding *ngFor ="let gasStation of gasStationsList; let i = index">
 
-          <ion-item class="listItem" ng-click='viewGasStation(gasStation.id)'>
+          <ion-item class="listItem">
             <ion-avatar slot='start'>
               <img src='{{gasStation.icon}}'>
             </ion-avatar>
@@ -61,22 +61,24 @@
               <i *ngIf="gasStation.google_rate<=3" class="far fa-star"></i>
               <i *ngIf="gasStation.google_rate<=4" class="far fa-star"></i>
             </ion-note>
+
+            <span class="itemSwap" slot="end"><ion-icon name="undo"></ion-icon></span>
           </ion-item>
 
           <ion-item-options side="end">
 
-            <ion-item-option color="danger">
+            <ion-item-option color="danger" (click)="openDetailsPage(gasStation)">
               <ion-icon slot="icon-only" name="open"></ion-icon>
             </ion-item-option>
 
-            <ion-item-option>
+            <ion-item-option (click)="showMapModule(gasStation.lat , gasStation.long)">
               <ion-icon slot="icon-only" name="locate"></ion-icon>
             </ion-item-option>
           </ion-item-options>
 
         </ion-item-sliding>
 
-        <div *ngIf="notFound" class="notFound"> <i class="fas fa-info-circle"></i> No gas stations has found </div>
+        <div *ngIf="notFound" class="notFound"> <i class="fas fa-info-circle"></i> No gas station has found </div>
 
       </ion-col>
 

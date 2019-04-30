@@ -2,85 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50914f7c-27d9-4316-9579-5a1b736b7e0b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/spare-parts-shops/map/map.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/spare-parts-shops/map/map.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/spare-parts-shops/map/map.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/spare-parts-shops/map/map.page.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/workshops/map/map.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/workshops/map/map.page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/workshops/map/map.page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/members/workshops/map/map.page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/after_plugin_install.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/AsyncLoadImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/AsyncLoadImage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/CordovaGoogleMaps.java" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/CordovaGoogleMaps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/MyPluginLayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/MyPluginLayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginMarker.java" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginMarker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginPolygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginPolygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginTileProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/plugin/google/maps/PluginTileProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-ar/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-ar/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-da/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-da/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-de/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-de/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-es/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-es/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-fr/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-fr/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-hi/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-hi/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-in/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-in/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-ja/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-ja/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-nb/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-nb/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-nl/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-nl/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-pl/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-pl/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-pt-rPT/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-pt-rPT/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-ru/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-ru/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-uk/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-uk/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-vi/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values-vi/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values/pgm_strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/android/res/values/pgm_strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/before_plugin_install.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/before_plugin_rm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/GoogleMaps/CordovaGoogleMaps.m" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/GoogleMaps/CordovaGoogleMaps.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/GoogleMaps/PluginEnvironment.m" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/GoogleMaps/PluginEnvironment.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/GoogleMaps/PluginTileProvider.m" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/GoogleMaps/PluginTileProvider.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/check_sdk_version.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/check_sdk_version.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_da.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_da.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_de.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_en.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_es.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_es.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_fr.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_fr.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_hi.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_hi.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_in.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_in.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_ja.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_ja.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_nb.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_nb.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_nl.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_nl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_pl.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_pl.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_pt-BR.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_pt-BR.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_ru.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_ru.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_uk.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_uk.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_vi.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-googlemaps/src/ios/strings/pgm_Localizable_vi.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GP_Task 2.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/@ionic-native/geolocation/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@ionic-native/geolocation/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/android.json" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/android.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/cordova_plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/cordova_plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/xml/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/xml/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/platform_www/cordova_plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/platform_www/cordova_plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/android.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/android.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/fetch.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/fetch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/api/cars.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/cars.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/members/cars/edit/edit.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/cars/edit/edit.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/maps.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/maps.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/api/search.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/api/search.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.spec.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/cars/index/index.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/cars/index/index.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/members/cars/index/index.page.spec.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/cars/index/index.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/cars/index/index.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/members/cars/new/new.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/cars/new/new.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/cars/new/new.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/cars/new/new.page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/cars/new/new.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/cars/new/new.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/cars/new/new.page.spec.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/cars/new/new.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/cars/new/new.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.spec.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/member-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/member-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/menu/menu.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/menu/menu.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/members/menu/menu.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/menu/menu.page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/members/menu/menu.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/menu/menu.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/members/profile/profile.page.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/profile/profile.page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/members/profile/profile.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/members/profile/profile.page.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/dist/" />
@@ -95,21 +60,107 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="477">
+              <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="376">
+              <caret line="125" column="6" selection-start-line="125" selection-start-column="6" selection-end-line="125" selection-end-column="6" />
               <folding>
                 <element signature="e#0#73#0" expanded="true" />
+                <element signature="n#!!block;n#loadHistoricRoutes#0;n#MapPage#0" />
+                <element signature="n#!!block;n#startTracking#0;n#MapPage#0" />
+                <element signature="n#!!block;n#redrawPath#0;n#MapPage#0" />
+                <element signature="n#!!block;n#stopTracking#0;n#MapPage#0" />
+                <element signature="e#3418#6598#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/api/search.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="1" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/api/rates.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/api/profile.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/api/maps.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="2" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="94" column="25" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="25" />
+            <state relative-caret-position="-269">
+              <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/members/workshops/list/list.page.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/list/list.page.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -118,36 +169,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>name=&quot;star-outline&quot;</find>
-      <find>listTitle</find>
-      <find>ionViewWillEnter</find>
-      <find>oncli</find>
-      <find>con</find>
-      <find>gasStation.google_rate</find>
-      <find>angula</find>
-      <find>star-outline</find>
-      <find>rated</find>
-      <find>userRate</find>
-      <find>conso</find>
-      <find>AppModule</find>
-      <find>inde</find>
-      <find>AppRoutingModule</find>
-      <find>this.markers</find>
-      <find>addMarker</find>
-      <find>markers</find>
-      <find>id</find>
-      <find>back</find>
-      <find>Ener</find>
-      <find>error-message</find>
-      <find>model</find>
-      <find>data.</find>
+      <find>cons</find>
       <find>console</find>
-      <find>carID</find>
-      <find>ion-button</find>
-      <find>gasStation</find>
-      <find>emptyList</find>
-      <find>@types</find>
-      <find>gas-station</find>
+      <find>conso</find>
+      <find>slo</find>
+      <find>getGasStationsList</find>
+      <find>storeCar</find>
+      <find>getCo</find>
+      <find>wor</find>
+      <find>Drivix_rate</find>
+      <find>*ngIf=&quot;results&quot;</find>
+      <find>getNearestGasStations</find>
+      <find>GasStations</find>
+      <find>stat</find>
+      <find>Gas</find>
+      <find>station</find>
+      <find>name</find>
+      <find>la</find>
+      <find>info</find>
+      <find>label-info</find>
+      <find>gas</find>
+      <find>petrol-label</find>
+      <find>stationObj</find>
+      <find>wo</find>
+      <find>spare</find>
+      <find>workshop</find>
+      <find>stationsMap</find>
+      <find>zoom</find>
+      <find>dista</find>
+      <find>getToken</find>
+      <find>getCurrentPosition</find>
     </findStrings>
     <replaceStrings>
       <replace>i</replace>
@@ -157,6 +208,13 @@
       <replace>data.rate</replace>
       <replace>Enter</replace>
       <replace>car.</replace>
+      <replace>rateData</replace>
+      <replace>this.rateData</replace>
+      <replace>stationObj</replace>
+      <replace>workshop</replace>
+      <replace>Drivix_rate</replace>
+      <replace>workshopObj</replace>
+      <replace>sparePartsShop</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -165,51 +223,64 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/app/api/search.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/pipes/station-search.pipe.ts" />
-        <option value="$PROJECT_DIR$/src/app/api/maps.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/api/cars.service.spec.ts" />
-        <option value="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.scss" />
-        <option value="$PROJECT_DIR$/src/theme/variables.scss" />
-        <option value="$PROJECT_DIR$/src/app/api/rates.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.scss" />
-        <option value="$PROJECT_DIR$/src/app/pipes/replace-dash.pipe.ts" />
-        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/members/cars/index/index.page.scss" />
-        <option value="$PROJECT_DIR$/src/app/members/menu/menu.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/members/menu/menu.page.html" />
-        <option value="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.html" />
         <option value="$PROJECT_DIR$/src/global.scss" />
         <option value="$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.scss" />
-        <option value="$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.html" />
-        <option value="$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.ts" />
         <option value="$PROJECT_DIR$/src/app/members/profile/profile.page.ts" />
         <option value="$PROJECT_DIR$/src/app/members/cars/new/new.module.ts" />
         <option value="$PROJECT_DIR$/src/app/members/profile/profile.page.html" />
-        <option value="$PROJECT_DIR$/src/app/members/cars/new/new.page.scss" />
         <option value="$PROJECT_DIR$/src/app/members/cars/edit/edit.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.scss" />
-        <option value="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.html" />
-        <option value="$PROJECT_DIR$/src/app/members/cars/index/index.page.html" />
-        <option value="$PROJECT_DIR$/src/app/members/cars/new/new.page.html" />
-        <option value="$PROJECT_DIR$/src/app/members/cars/index/index.page.ts" />
-        <option value="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.ts" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/app/members/cars/new/new.page.ts" />
-        <option value="$PROJECT_DIR$/src/app/api/cars.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.html" />
-        <option value="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.ts" />
-        <option value="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.ts" />
         <option value="$PROJECT_DIR$/src/app/members/menu/menu.page.ts" />
+        <option value="$PROJECT_DIR$/config.xml" />
+        <option value="$PROJECT_DIR$/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/api/cars.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/resolver/app-resolver.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/cars/index/index.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/api/comments.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/cars/new/new.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/cars/index/index.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/workshops/list/list.page.ts" />
         <option value="$PROJECT_DIR$/src/app/members/member-routing.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/spare-parts-shops/map/map.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/workshops/map/map.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/spare-parts-shops/list/list.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/workshops/list/list.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/spare-parts-shops/list/list.page.scss" />
+        <option value="$PROJECT_DIR$/src/app/members/workshops/list/list.page.scss" />
+        <option value="$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.scss" />
+        <option value="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/cars/edit/edit.page.scss" />
+        <option value="$PROJECT_DIR$/src/app/members/cars/new/new.page.scss" />
+        <option value="$PROJECT_DIR$/src/app/members/cars/new/new.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/spare-parts-shops/map/map.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/workshops/map/map.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.scss" />
+        <option value="$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.page.scss" />
+        <option value="$PROJECT_DIR$/src/app/members/workshops/details/details.page.scss" />
+        <option value="$PROJECT_DIR$/src/app/members/workshops/details/details.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/menu/menu.page.html" />
+        <option value="$PROJECT_DIR$/src/app/members/spare-parts-shops/list/list.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/api/maps.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/menu/menu.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/workshops/details/details.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.ts" />
+        <option value="$PROJECT_DIR$/src/app/api/search.service.ts" />
+        <option value="$PROJECT_DIR$/src/app/api/rates.service.ts" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="10" />
-    <option name="y" value="47" />
-    <option name="width" value="1221" />
-    <option name="height" value="584" />
+    <option name="y" value="27" />
+    <option name="width" value="622" />
+    <option name="height" value="579" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -240,6 +311,13 @@
               <item name="Drivix" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Drivix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="members" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -249,15 +327,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="members" type="462c0819:PsiDirectoryNode" />
               <item name="gas-stations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Drivix" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="members" type="462c0819:PsiDirectoryNode" />
-              <item name="gas-stations" type="462c0819:PsiDirectoryNode" />
-              <item name="details" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
@@ -280,6 +349,67 @@
               <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
               <item name="Drivix" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="members" type="462c0819:PsiDirectoryNode" />
+              <item name="spare-parts-shops" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Drivix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="members" type="462c0819:PsiDirectoryNode" />
+              <item name="spare-parts-shops" type="462c0819:PsiDirectoryNode" />
+              <item name="details" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Drivix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="members" type="462c0819:PsiDirectoryNode" />
+              <item name="spare-parts-shops" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Drivix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="members" type="462c0819:PsiDirectoryNode" />
+              <item name="workshops" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Drivix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="members" type="462c0819:PsiDirectoryNode" />
+              <item name="workshops" type="462c0819:PsiDirectoryNode" />
+              <item name="details" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Drivix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="members" type="462c0819:PsiDirectoryNode" />
+              <item name="workshops" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Drivix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="members" type="462c0819:PsiDirectoryNode" />
+              <item name="workshops" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Drivix" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Drivix" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="theme" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -292,7 +422,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="excluded.www.directory" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/app/members/spare-parts-shops/details" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -308,6 +438,11 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/app/pipes" />
       <recent name="$PROJECT_DIR$/src/app/api" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/members/spare-parts-shops/details" />
+      <recent name="$PROJECT_DIR$/src/app/members/spare-parts-shops" />
+      <recent name="$PROJECT_DIR$/src/app/members/workshops" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -347,33 +482,51 @@
       <workItem from="1555440368323" duration="28052000" />
       <workItem from="1555617903510" duration="3709000" />
       <workItem from="1555648283783" duration="464000" />
-      <workItem from="1555649617608" duration="17187000" />
+      <workItem from="1555649617608" duration="26095000" />
+      <workItem from="1555704687523" duration="5911000" />
+      <workItem from="1555829842006" duration="28892000" />
+      <workItem from="1555862712701" duration="13461000" />
+      <workItem from="1555956862611" duration="4061000" />
+      <workItem from="1556028888192" duration="2916000" />
+      <workItem from="1556037568469" duration="7660000" />
+      <workItem from="1556086938950" duration="2924000" />
+      <workItem from="1556120521068" duration="2649000" />
+      <workItem from="1556125010463" duration="1805000" />
+      <workItem from="1556171190956" duration="4606000" />
+      <workItem from="1556227495875" duration="3943000" />
+      <workItem from="1556254483776" duration="9333000" />
+      <workItem from="1556266338022" duration="150000" />
+      <workItem from="1556267114294" duration="2117000" />
+      <workItem from="1556270094933" duration="6215000" />
+      <workItem from="1556286785528" duration="881000" />
+      <workItem from="1556289157663" duration="6769000" />
+      <workItem from="1556522467194" duration="7981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="134131000" />
+    <option name="totallyTimeSpent" value="255313000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1366" height="684" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21842496" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24665676" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32844037" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.20550458" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="TypeScript" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.57116103" />
+      <window_info anchor="bottom" id="TypeScript" order="9" weight="0.1559633" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32844037" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.44770643" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -383,322 +536,312 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="6" lean-forward="true" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/public/register/register.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="63" lean-forward="true" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pipes/station-search.pipe.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/details/details.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/api/cars.service.spec.ts" />
-    <entry file="file://$PROJECT_DIR$/tslint.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/api/search.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="7" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="22" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/api/authentication.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/pipes/replace-dash.pipe.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/resolver/app-resolver.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/api/rates.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="39" column="5" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/index/index.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="59" column="19" selection-start-line="59" selection-start-column="19" selection-end-line="59" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/menu/menu.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="28" column="174" lean-forward="true" selection-start-line="28" selection-start-column="174" selection-end-line="28" selection-end-column="174" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/public/login/login.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="8" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/theme/variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/global.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="90" selection-start-line="11" selection-start-column="90" selection-end-line="11" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/api/profile.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/public/main/main.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="15" selection-end-line="12" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/profile/profile.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="45" selection-start-line="45" selection-end-line="52" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/profile/profile.page.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/profile/profile.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/profile/profile.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="2" selection-start-line="29" selection-start-column="2" selection-end-line="31" selection-end-column="2" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/index/index.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/new/new.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="26" column="75" lean-forward="true" selection-start-line="25" selection-start-column="4" selection-end-line="26" selection-end-column="75" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/edit/edit.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/new/new.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="60" selection-start-line="60" selection-end-line="67" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/edit/edit.page.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="67" column="1" selection-start-line="67" selection-start-column="1" selection-end-line="67" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="128" column="21" selection-start-line="128" selection-start-column="21" selection-end-line="128" selection-end-column="21" />
-          <folding>
-            <element signature="n#ion-col#10;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/index/index.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/new/new.page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="79" column="61" selection-start-line="79" selection-start-column="61" selection-end-line="79" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/new/new.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="26" column="59" selection-start-line="26" selection-start-column="59" selection-end-line="26" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <marker date="1555664289336" expanded="true" signature="963:1419" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/api/cars.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="9" lean-forward="true" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+        <state relative-caret-position="75">
+          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/edit/edit.page.html">
+    <entry file="file://$PROJECT_DIR$/src/app/members/cars/edit/edit.page.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="55" column="19" lean-forward="true" selection-start-line="55" selection-start-column="19" selection-end-line="55" selection-end-column="19" />
+        <state relative-caret-position="96">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/api/authentication.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/cars/new/new.page.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="47" column="39" selection-start-line="47" selection-start-column="26" selection-end-line="47" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <marker date="1556126328000" expanded="true" signature="963:1465" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/cars/index/index.page.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="59" column="23" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/members/cars/index/index.page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="53" column="51" selection-start-line="53" selection-start-column="51" selection-end-line="53" selection-end-column="51" />
+        <state relative-caret-position="105">
+          <caret line="13" column="37" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
           <folding>
             <element signature="n#style#0;n#i#0;n#span#0;n#ion-col#1;n#ion-row#0;n#ion-label#0;n#ion-item#1;n#ion-col#0;n#ion-col#1;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/cars/edit/edit.page.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/members/workshops/map/map.page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="20" column="14" lean-forward="true" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="44" />
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/api/comments.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/map/map.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.spec.ts" />
+    <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/theme/variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/workshops/list/list.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="61" column="86" selection-start-line="61" selection-start-column="86" selection-end-line="61" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="64" column="12" selection-start-line="64" selection-start-column="12" selection-end-line="64" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/list/list.page.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#55#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/workshops/list/list.page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/list/list.page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="60" column="16" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/cars/edit/edit.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/cars/new/new.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="41" column="65" lean-forward="true" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/cars/new/new.page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="68" column="11" selection-start-line="68" selection-start-column="1" selection-end-line="68" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/cars/edit/edit.page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="68" selection-start-line="68" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/workshops/map/map.page.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="278" column="66" selection-start-line="278" selection-start-column="66" selection-end-line="278" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/map/map.page.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="279" column="66" selection-start-line="279" selection-start-column="66" selection-end-line="279" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="n#!!block;n#presentToastWithOptions#0;n#DetailsPage#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="66" column="26" lean-forward="true" selection-start-line="66" selection-start-column="26" selection-end-line="66" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/workshops/details/details.page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/workshops/details/details.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="112" column="111" selection-start-line="112" selection-start-column="104" selection-end-line="112" selection-end-column="111" />
+          <folding>
+            <element signature="n#ion-col#1;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#3;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#4;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#6;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#7;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#9;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#10;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#11;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#12;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#13;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="75" column="114" selection-start-line="75" selection-start-column="114" selection-end-line="75" selection-end-column="114" />
+          <folding>
+            <element signature="n#ion-col#4;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#8;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#9;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-item#0;n#ion-list#0;n#ion-col#9;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="n#ion-col#1;n#ion-item#0;n#ion-list#0;n#ion-col#9;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="112" column="119" selection-start-line="112" selection-start-column="119" selection-end-line="112" selection-end-column="119" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/menu/menu.page.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/menu/menu.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="39" column="160" selection-start-line="39" selection-start-column="160" selection-end-line="39" selection-end-column="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/list/list.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="65" column="60" selection-start-line="65" selection-start-column="60" selection-end-line="65" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/members/menu/menu.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
+        <state relative-caret-position="252">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -707,8 +850,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/members/member-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="12" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        <state relative-caret-position="237">
+          <caret line="16" column="70" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="70" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
@@ -717,71 +860,119 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/members/menu/menu.page.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+        <state relative-caret-position="240">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/details/details.page.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/members/workshops/details/details.page.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="66" column="32" selection-start-line="66" selection-start-column="32" selection-end-line="66" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="n#!!block;n#getUserReview#0;n#DetailsPage#0" />
-            <element signature="n#!!block;n#submitRating#0;n#DetailsPage#0" />
-            <element signature="n#!!block;n#presentToastWithOptions#0;n#DetailsPage#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/api/maps.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="37" lean-forward="true" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-70">
-          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        <state relative-caret-position="366">
+          <caret line="63" column="1" lean-forward="true" selection-start-line="63" selection-start-column="1" selection-end-line="63" selection-end-column="1" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/list/list.page.html">
+    <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/details/details.page.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="37" column="56" lean-forward="true" selection-start-line="37" selection-start-column="56" selection-end-line="37" selection-end-column="56" />
+        <state relative-caret-position="380">
+          <caret line="61" column="1" lean-forward="true" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
           <folding>
-            <element signature="n#ion-note#0;n#ion-item#0;n#ion-item-sliding#0;n#ion-col#3;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
-            <element signature="n#ion-item-options#0;n#ion-item-sliding#0;n#ion-col#3;n#ion-row#0;n#ion-grid#0;n#ion-content#0;n#!!top" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="477">
+          <caret line="38" column="34" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/members/gas-stations/map/map.page.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="376">
+          <caret line="125" column="6" selection-start-line="125" selection-start-column="6" selection-end-line="125" selection-end-column="6" />
           <folding>
             <element signature="e#0#73#0" expanded="true" />
+            <element signature="n#!!block;n#loadHistoricRoutes#0;n#MapPage#0" />
+            <element signature="n#!!block;n#startTracking#0;n#MapPage#0" />
+            <element signature="n#!!block;n#redrawPath#0;n#MapPage#0" />
+            <element signature="n#!!block;n#stopTracking#0;n#MapPage#0" />
+            <element signature="e#3418#6598#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/spare-parts-shops/list/list.page.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="60" column="39" selection-start-line="60" selection-start-column="39" selection-end-line="60" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/members/workshops/list/list.page.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="94" column="25" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="25" />
+        <state relative-caret-position="-269">
+          <caret line="75" column="27" lean-forward="true" selection-start-line="75" selection-start-column="27" selection-end-line="75" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/api/profile.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/api/maps.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/api/search.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/api/rates.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

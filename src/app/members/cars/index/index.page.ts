@@ -30,6 +30,7 @@ export class IndexPage implements OnInit {
         this.carsService.getUserCars(val).then(data => {
           if (Object.keys(data).length > 0) {
             this.carsList = data;
+            console.log(this.carsList);
           } else {
             this.emptyList = true;
           }
@@ -40,6 +41,7 @@ export class IndexPage implements OnInit {
 
   updateCar(carId): void {
     this.router.navigate(['members/cars/edit', carId]);
+    console.log('here');
   }
 
   deleteUserCars(carId) {

@@ -1,0 +1,84 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+
+      <ion-col size="12">
+        <h1 class="searchTitle">Search</h1>
+
+        <span class="searchDescription">search for Spares Shop with full details</span>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-item>
+          <ion-searchbar [(ngModel)]="searchText" (ionChange)="searchForSparePartsShops()" type="text" placeholder="Search by spare parts shop name" cancelButtonText="Custom Cancel"></ion-searchbar>
+        </ion-item>
+      </ion-col>
+
+      <ion-col class="listTitle" size="12" *ngIf="results">
+        <i class="far fa-compass"></i>
+        <span>
+          nearest spare parts shops to your location
+        </span>
+      </ion-col>
+
+      <ion-col size="12">
+
+        <ion-item-sliding *ngFor ="let sparePartsShop of sparePartsShopsList; let i = index">
+
+          <ion-item class="listItem">
+
+            <ion-label>
+              <h2 class="itemName"> {{ sparePartsShop.name }} </h2>
+              <p class="itemAddress"> {{ sparePartsShop.location }} </p>
+              <p class="itemDistance" *ngIf="results"> {{ calculateDistance(sparePartsShop.distance) }} </p>
+            </ion-label>
+
+            <ion-note slot="end" color="primary">
+              RATE :
+              <i class="fas fa-star" *ngIf="sparePartsShop.Drivix_rate>=1" ></i>
+              <i class="fas fa-star" *ngIf="sparePartsShop.Drivix_rate>=2" ></i>
+              <i class="fas fa-star" *ngIf="sparePartsShop.Drivix_rate>=3" ></i>
+              <i class="fas fa-star" *ngIf="sparePartsShop.Drivix_rate>=4" ></i>
+              <i class="fas fa-star" *ngIf="sparePartsShop.Drivix_rate>=5" ></i>
+              <i *ngIf="sparePartsShop.Drivix_rate%1!=0" class="fas fa-star-half-alt" ></i>
+              <i *ngIf="sparePartsShop.Drivix_rate==0" class="far fa-star"></i>
+              <i *ngIf="sparePartsShop.Drivix_rate<=1" class="far fa-star"></i>
+              <i *ngIf="sparePartsShop.Drivix_rate<=2" class="far fa-star"></i>
+              <i *ngIf="sparePartsShop.Drivix_rate<=3" class="far fa-star"></i>
+              <i *ngIf="sparePartsShop.Drivix_rate<=4" class="far fa-star"></i>
+            </ion-note>
+
+            <span class="itemSwap" slot="end"><ion-icon name="undo"></ion-icon></span>
+          </ion-item>
+
+          <ion-item-options side="end">
+
+            <ion-item-option color="danger" (click)="openDetailsPage(sparePartsShop)">
+              <ion-icon slot="icon-only" name="open"></ion-icon>
+            </ion-item-option>
+
+            <ion-item-option (click)="showMapModule(sparePartsShop.lat , sparePartsShop.long)">
+              <ion-icon slot="icon-only" name="locate"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+
+        </ion-item-sliding>
+
+        <div *ngIf="notFound" class="notFound"> <i class="fas fa-info-circle"></i> No spare parts shop has found </div>
+
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,0 +1,14 @@
+<ion-header>
+  <div class="ion-padding">
+    <ion-buttons left color="secondary">
+      <button ion-button icon-only (click)="closeModal()" class="BackBColor">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+  </div>
+</ion-header>
+
+
+<ion-content>
+  <div #map id="map" [style.width]="'100%'" [style.height]="height"></div>
+</ion-content>

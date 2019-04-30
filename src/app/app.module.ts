@@ -19,10 +19,11 @@ import { GoogleMaps } from '@ionic-native/google-maps/ngx';
 
 import { DecimalPipe } from '@angular/common';
 import { ReplaceDashPipe } from './pipes/replace-dash.pipe';
+import {MapDirectionModelComponent} from './map-direction-model/map-direction-model.component';
 
 @NgModule({
-  declarations: [AppComponent, ReplaceDashPipe],
-  entryComponents: [],
+  declarations: [AppComponent, ReplaceDashPipe , MapDirectionModelComponent],
+  entryComponents: [MapDirectionModelComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule , HttpModule ,
             HttpClientModule , IonicStorageModule.forRoot()],
   providers: [

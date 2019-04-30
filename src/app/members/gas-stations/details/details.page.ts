@@ -1,9 +1,11 @@
 import { Storage } from '@ionic/storage';
-import { NavController } from '@ionic/angular';
+import {ModalController, NavController} from '@ionic/angular';
 import { ToastController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { RatesService } from '../../../api/rates.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import { CommentsService } from '../../../api/comments.service';
+import {MapDirectionModelComponent} from '../../../map-direction-model/map-direction-model.component';
 
 @Component({
   selector: 'app-details',
@@ -12,28 +14,9 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class DetailsPage implements OnInit {
 
-  stationId : any;
+  stationObj: any;
   station = 'petrol';
-  gasStation = {
-    id: 181,
-    name: 'Total Egypt',
-    city: 'cairo',
-    address: 'Ismailia Governorate, Egypt',
-    gas: 1,
-    sollar: 0,
-    petrol_80: 1,
-    petrol_92: 1,
-    petrol_95: 1,
-    oil_change: 0,
-    car_washing: 1,
-    tier_repare: 0,
-    align_wheel: 0,
-    blowing_air: 0,
-    blowing_nitro: 0,
-    fix_suspension: 0,
-    google_rate: 4,
-    icon: 'http://www.drivixcorp.com/api/storage/1553962412Total Egypt.jpg/gasStation',
-  };
+  role_comments: any;
   gasStationPetrol = [
     'gas',
     'sollar',
@@ -50,7 +33,7 @@ export class DetailsPage implements OnInit {
       'blowing_nitro',
       'fix_suspension',
   ];
-  data = {
+  rateData = {
     token : '',
     gas_id : null,
     rate : null
@@ -59,35 +42,42 @@ export class DetailsPage implements OnInit {
 
 
   constructor(public navCtrl: NavController, public ratesService: RatesService, private storage: Storage,
-              public toastController: ToastController, private route: ActivatedRoute) {
+              public toastController: ToastController, private route: ActivatedRoute, public commentsService: CommentsService , public modalController: ModalController) {
+
+    this.stationObj = this.route.snapshot.paramMap.get('stationObj');
+
+    this.stationObj = JSON.parse(this.stationObj);
+
+    for (let prop of Object.keys(this.stationObj)) {
+
+      if (this.gasStationPetrol.includes(prop)) {
+        this.gasStationPetrol[prop] = this.stationObj[prop];
+      } else if (this.gasStationServices.includes(prop)) {
+        this.gasStationServices[prop] = this.stationObj[prop];
+      }
+    }
   }
 
   ngOnInit() {
-    this.stationId = this.route.snapshot.paramMap.get('stationId');
-    console.log(this.stationId);
     this.getUserReview();
+    this.getToken();
   }
 
-  getUserReview() {
+  getToken() {
     this.storage.get('token').then((val) => {
       if (val != null) {
-        this.data.token = val;
-        this.data.gas_id = this.gasStation.id;
-        this.ratesService.getUserReview(this.data).then(data => {
-          if (typeof(data) === 'number') {
-            this.data.rate = data;
-          } else {
-            this.data.rate = 0;
-          }
-        });
+        return val;
       }
     });
   }
 
-  submitRating(rateValue) {
-    this.data.rate = rateValue;
-    this.ratesService.gasStationReview(this.data).then(data => {
-      this.presentToastWithOptions();
+  async submitRating(rateValue) {
+    if (this.rateData.rate === 0) {
+      this.stationObj.num_Drivix_review++;
+    }
+    this.rateData.rate = rateValue;
+    await this.ratesService.gasStationReview(this.rateData).then(async data => {
+      await this.presentToastWithOptions();
     });
   }
 
@@ -100,12 +90,35 @@ export class DetailsPage implements OnInit {
     toast.present();
   }
 
-  replaceDash (word) {
+  replaceDash(word) {
     return word.replace('_', ' ');
   }
 
-  segmentChanged(ev: any) {
-    // console.log('Segment changed', ev);
+  getUserReview() {
+    this.storage.get('token').then((val) => {
+      if (val != null) {
+        this.rateData.token = val;
+        this.rateData.gas_id = this.stationObj.id;
+        this.ratesService.getUserReview(this.rateData).then(data => {
+          if (typeof(data) === 'number') {
+            this.rateData.rate = data;
+          } else {
+            this.rateData.rate = 0;
+          }
+        });
+      }
+    });
   }
 
+  async showMapModule(lat , long) {
+    console.log('lat' + lat + ' - ' + long + long);
+    const modal = await this.modalController.create({
+      component: MapDirectionModelComponent,
+      componentProps: {
+        'destLat': lat,
+        'destLong': long
+      }
+    });
+    return await modal.present();
+  }
 }

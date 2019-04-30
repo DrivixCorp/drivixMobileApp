@@ -11,7 +11,7 @@
 
   <!-- fab placed to the top end -->
   <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button color="dark" routerLink="/members/cars/new" routerDirection="forward">
+    <ion-fab-button color="dark" href="/members/cars/new" routerDirection="forward">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
@@ -48,7 +48,7 @@
         
           <ion-row class="carList-operations">
             <ion-col size="6">
-              <ion-button color="medium" expand="full" (click)="updateCar(car.id)" routerDirection="forward"><ion-icon class="" name="create" slot="end"></ion-icon></ion-button>
+              <ion-button color="medium" expand="full" href="/members/cars/edit/{{ car.id }}" routerDirection="forward"><ion-icon class="" name="create" slot="end"></ion-icon></ion-button>
             </ion-col>
             <ion-col size="6">
               <ion-button (click)="presentAlert(car)" color="dark" expand="full"><ion-icon class="" name="trash" slot="end"></ion-icon></ion-button>

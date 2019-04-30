@@ -1,0 +1,18 @@
+#map{
+    height: 100%;
+}
+ion-title{
+    letter-spacing: 1.8px;
+    font-family: 'Raleway', sans-serif;
+}
+.map-header{
+    padding: 0px;
+    background-color: #eeab10;
+    box-shadow: 0px 3px 16px -5px rgba(0,0,0,0.75);
+}
+ion-searchbar{
+    box-shadow: none;
+    --border-radius: 5px;
+    --background: rgba(255, 255, 255, 0.3);
+    font-family: 'Titillium Web', sans-serif;
+}

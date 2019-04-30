@@ -3,19 +3,26 @@
     <ion-buttons slot="start">
       <ion-back-button color="light"></ion-back-button>
     </ion-buttons>
-    <ion-title color="light">Nearest Gas Stations</ion-title>
+    <ion-title color="light">Nearest gas stations</ion-title>
   </ion-toolbar>
   <ion-grid class="map-header">
     <ion-row>
       <ion-col size="12">
         <ion-searchbar class="map-search" debounce="500" showCancelButton placeholder="Search for gas station"></ion-searchbar>
-        <!--<ion-button (click)="calculateAndDisplayRoute()">Get Direction</ion-button>-->
       </ion-col>
     </ion-row>
   </ion-grid>
 </ion-header>
 
 <ion-content>
+
+  <ion-list>
+    <ion-list-header>Previous Tracks</ion-list-header>
+    <ion-item *ngFor="let route of previousTracks">
+      {{ route.finished | date }}, {{ route.path.length }} Waypoints
+      <button ion-button clear item-end (click)="showHistoryRoute(route.path)">View Route</button>
+    </ion-item>
+  </ion-list>
 
   <div #map id="map"></div>
 
@@ -28,8 +35,11 @@
     </ion-fab-button>
 
     <ion-fab-list side="end">
-      <ion-fab-button>
-        <ion-icon name="menu"></ion-icon>
+      <ion-fab-button (click)="startTracking()" *ngIf="!isTracking">
+        <ion-icon name="navigate"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button (click)="stopTracking()" *ngIf="isTracking">
+        <ion-icon name="hand"></ion-icon>
       </ion-fab-button>
       <ion-fab-button>
         <ion-icon name="refresh-circle"></ion-icon>

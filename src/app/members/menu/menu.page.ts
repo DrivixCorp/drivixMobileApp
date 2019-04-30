@@ -27,6 +27,25 @@ export class MenuPage {
       title: 'Cars',
       url: '/members/menu/cars',
     },
+    {
+      title: 'Car Services',
+      children: [
+        {
+          title: 'gas Station',
+          url: '/members/menu/gas-stations-list',
+          icon: 'arrow-dropright'
+        },
+        {
+          title: 'workshop',
+          url: '/members/menu/workshops-list',
+          icon: 'arrow-dropright'
+        }, {
+          title: 'spares shop',
+          url: '/members/menu/spare-parts-shops-list',
+          icon: 'arrow-dropright'
+        },
+      ]
+    }
   ];
 
   constructor(private router: Router , public navCtrl: NavController , private storage: Storage) {

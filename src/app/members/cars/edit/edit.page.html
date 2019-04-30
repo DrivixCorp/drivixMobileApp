@@ -1,7 +1,7 @@
 <ion-header no-shadow no-border>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref="/members/menu/cars"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -26,7 +26,7 @@
 
       <ion-col size="12">
         <ion-row class="car-form">
-          <div [formGroup]="carFormGroup">
+          <div [formGroup]="carFormGroup" class="editCarForm">
             <ion-col size="6">
               <ion-item>
                 <ion-label position="stacked">Brand</ion-label>
@@ -35,7 +35,6 @@
 
               <span class="error-message" *ngIf="carFormGroup.controls['brand'].hasError('required') && (carFormGroup.controls['brand'].dirty || carFormGroup.controls['brand'].touched)">Please enter car brand</span>
               <span class="error-message" *ngIf="carFormGroup.controls['brand'].hasError('maxLength') && (carFormGroup.controls['brand'].dirty || carFormGroup.controls['brand'].touched)">At most 20 character are allowed</span>
-
             </ion-col>
 
             <ion-col size="6">
@@ -46,7 +45,6 @@
 
               <span class="error-message" *ngIf="carFormGroup.controls['model'].hasError('required') && (carFormGroup.controls['model'].dirty || carFormGroup.controls['model'].touched)">Please enter car model</span>
               <span class="error-message" *ngIf="carFormGroup.controls['model'].hasError('maxLength') && (carFormGroup.controls['model'].dirty || carFormGroup.controls['model'].touched)">At most 20 character are allowed</span>
-
             </ion-col>
 
             <ion-col size="6">
@@ -58,7 +56,7 @@
               <span class="error-message" *ngIf="carFormGroup.controls['year'].hasError('required') && (carFormGroup.controls['year'].dirty || carFormGroup.controls['year'].touched)">Please enter the year</span>
               <span class="error-message" *ngIf="carFormGroup.controls['year'].hasError('maxLength') && (carFormGroup.controls['year'].dirty || carFormGroup.controls['year'].touched)">At most 5 digits are allowed</span>
               <span class="error-message" *ngIf="carFormGroup.controls['year'].hasError('minLength') && (carFormGroup.controls['year'].dirty || carFormGroup.controls['year'].touched)">At least 4 digits are allowed</span>
-
+              <span class="error-message" *ngIf="carFormGroup.controls['year'].hasError('pattern') && (carFormGroup.controls['year'].dirty || carFormGroup.controls['year'].touched)">Only years after 1990 are allowed</span>
             </ion-col>
 
             <ion-col size="6">
@@ -68,7 +66,6 @@
               </ion-item>
 
               <span class="error-message" *ngIf="carFormGroup.controls['color'].hasError('required') && (carFormGroup.controls['color'].dirty || carFormGroup.controls['color'].touched)">Please select car color</span>
-
             </ion-col>
           </div>
         </ion-row>

@@ -15,7 +15,9 @@ const routes: Routes = [
       { path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },
       { path: 'services', loadChildren: '../services/services.module#ServicesPageModule' },
       { path: 'gas-station', loadChildren: '../gas-stations/details/details.module#DetailsPageModule' },
-      { path: 'gas-station-list', loadChildren: '../gas-stations/list/list.module#ListPageModule' },
+      { path: 'gas-stations-list', loadChildren: '../gas-stations/list/list.module#ListPageModule' },
+      { path: 'workshops-list', loadChildren: '../workshops/list/list.module#ListPageModule' },
+      { path: 'spare-parts-shops-list', loadChildren: '../spare-parts-shops/list/list.module#ListPageModule' },
       { path: 'cars', loadChildren: '../cars/index/index.module#IndexPageModule' },
     ]
   },

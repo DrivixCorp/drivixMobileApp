@@ -1,9 +1,8 @@
 <ion-header no-shadow no-border>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title color="light"></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,33 +12,46 @@
 
       <ion-col size="3"class="logo-container">
         <div class="station-logo">
-          <img src="{{ gasStation.icon }}">
+          <img src="{{ stationObj.icon }}">
         </div>
       </ion-col>
 
       <ion-col size="9" class="name-container">
-        <ion-row class="station-name"><h3>{{ gasStation.name }}</h3></ion-row>
+        <ion-row class="station-name"><h3>{{ stationObj.name }}</h3></ion-row>
         <ion-row class="station-rate">
           <ion-col size="4">
             <h5>
               <span *ngFor="let star of rateRange; let i = index">
-                <i class="fas fa-star rated" *ngIf="gasStation.google_rate >= (i+1)"></i>
+                <i class="fas fa-star rated" *ngIf="stationObj.google_rate >= (i+1)"></i>
               </span>
-              <i class="fas fa-star-half-alt rated" *ngIf="gasStation.google_rate%1!=0"></i>
+              <i class="fas fa-star-half-alt rated" *ngIf="stationObj.google_rate%1!=0"></i>
               <span *ngFor="let star of rateRange; let i = index">
-                <i class="far fa-star" *ngIf="gasStation.google_rate <= (i)"></i>
+                <i class="far fa-star" *ngIf="stationObj.google_rate <= (i)"></i>
               </span>
             </h5>
           </ion-col>
-          <ion-col size="4"><h5>(Reviews | 24)</h5></ion-col>
+          <ion-col size="4"><h5>| Google Review</h5></ion-col>
+        </ion-row>
+        <ion-row class="station-rate">
+          <ion-col size="4">
+            <h5>
+              <span *ngFor="let star of rateRange; let i = index">
+                <i class="fas fa-star rated" *ngIf="stationObj.Drivix_rate >= (i+1)"></i>
+              </span>
+              <i class="fas fa-star-half-alt rated" *ngIf="stationObj.Drivix_rate%1!=0"></i>
+              <span *ngFor="let star of rateRange; let i = index">
+                <i class="far fa-star" *ngIf="stationObj.Drivix_rate <= (i)"></i>
+              </span>
+            </h5>
+          </ion-col>
+          <ion-col size="4"><h5>| Drivix Reviews <span class="label-info">{{ stationObj.num_Drivix_review }}</span></h5></ion-col>
         </ion-row>
         <ion-row class="station-address">
-          <h6> <ion-icon name="pin"></ion-icon> {{ gasStation.address }} | {{ gasStation.city }}</h6>
+          <h6> <ion-icon name="pin"></ion-icon> {{ stationObj.address }} | {{ stationObj.city }}</h6>
         </ion-row>
       </ion-col>
 
-      <ion-col size="12" class="separator">
-      </ion-col>
+      <ion-col size="12" class="separator"></ion-col>
 
       <ion-col size="12" class="station-rating">
         <span class="rate-title">Rate this gas station</span>
@@ -49,10 +61,10 @@
       <ion-col size="12" class="user-rate">
 
         <span *ngFor="let star of rateRange; let i = index">
-          <ion-icon name="star" size="large" color="primary" *ngIf="data.rate >= (i+1)" (click)="submitRating(i+1)"></ion-icon>
+          <ion-icon name="star" size="large" color="primary" *ngIf="rateData.rate >= (i+1)" (click)="submitRating(i+1)"></ion-icon>
         </span>
         <span *ngFor="let star of rateRange; let i = index">
-          <ion-icon name="star-outline" size="large" color="medium" *ngIf="data.rate <= (i)" (click)="submitRating(i+1)"></ion-icon>
+          <ion-icon name="star-outline" size="large" color="medium" *ngIf="rateData.rate <= (i)" (click)="submitRating(i+1)"></ion-icon>
         </span>
 
       </ion-col>
@@ -60,37 +72,9 @@
       <ion-col size="12" class="separator">
       </ion-col>
 
-      <ion-col size="12" class="station-work">
-        <ion-row>
-          <ion-col size="6">
-            <span><i class="far fa-clock"></i> working hours: </span><span class="station-hours">24h</span>
-          </ion-col>
-          <ion-col size="3" offset="3">
-              <span class="station-status">open now</span>
-          </ion-col>
-        </ion-row>
-      </ion-col>
-
-      <ion-col size="12" class="separator">
-      </ion-col>
-
-      <ion-col size="12" class="station-map">
-        <ion-button routerLink="/members/gas-stations/map" routerDirection="forward" expand="block" color="tertiary">open in map<i class="far fa-map"></i>
+      <ion-col size="12" (click)="showMapModule(stationObj.lat , stationObj.long)" class="station-map">
+        <ion-button  expand="block" color="primary">open in map<i class="far fa-map"></i>
         </ion-button>
-      </ion-col>
-
-      <ion-col size="12" class="img-slider">
-          <ion-slides pager="true">
-            <ion-slide class="station-img">
-              <img src="https://farm1.staticflickr.com/630/21293146282_c34413516e_b.jpg">
-            </ion-slide>
-            <ion-slide class="station-img">
-              <img src="https://farm6.staticflickr.com/5685/21334623275_6a6dfb28e4_b.jpg">
-            </ion-slide>
-            <ion-slide class="station-img">
-              <img src="https://fronterasdesk.org/sites/default/files/styles/special_story_images_aspect_switcher/public/field/image/Gas%20Station%202.JPG?itok=lYhEa8eF">
-            </ion-slide>
-          </ion-slides>
       </ion-col>
 
       <ion-col size="12" class="separator">
@@ -98,7 +82,7 @@
 
       <ion-col size="12" color="light">
         <ion-toolbar color="light">
-          <ion-segment [(ngModel)]="station" (ionChange)="segmentChanged($event)" color="tertiary">
+          <ion-segment [(ngModel)]="station" color="tertiary">
             <ion-segment-button href="#petrol" value="petrol">
               <ion-label>Petrol</ion-label>
             </ion-segment-button>
@@ -111,14 +95,14 @@
 
       <ion-col size="12" [ngSwitch]="station" class="station-properties">
         <ion-list *ngSwitchCase="'petrol'">
-          
+
           <ion-item *ngFor="let service of gasStationPetrol">
             <ion-col size="8" offset="1">
               <label class="petrol-label">{{ replaceDash(service) | titlecase }}</label>
             </ion-col>
             <ion-col size="3" class="property-availability">
-              <i class="fas fa-check-circle" *ngIf="gasStation[service] == 1"></i>
-              <span class="station-property-unavailable" *ngIf="gasStation[service] == 0">unavailable</span>
+              <i class="fas fa-check-circle station-property-available" *ngIf="gasStationPetrol[service] == 1"></i>
+              <i class="far fa-times-circle station-property-unavailable" *ngIf="gasStationPetrol[service] == 0"></i>
             </ion-col>
           </ion-item>
 
@@ -131,13 +115,14 @@
               <label class="petrol-label">{{ replaceDash(service) | titlecase }}</label>
             </ion-col>
             <ion-col size="3" class="property-availability">
-              <i class="fas fa-check-circle" *ngIf="gasStation[service] == 1"></i>
-              <span class="station-property-unavailable" *ngIf="gasStation[service] == 0">unavailable</span>
+              <i class="fas fa-check-circle station-property-available" *ngIf="stationObj[service] == 1"></i>
+              <i class="far fa-times-circle station-property-unavailable" *ngIf="stationObj[service] == 0"></i>
             </ion-col>
           </ion-item>
 
         </ion-list>
       </ion-col>
+
     </ion-row>
   </ion-grid>
 </ion-content>
