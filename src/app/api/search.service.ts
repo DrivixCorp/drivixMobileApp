@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
-
 export class SearchService {
 
   apiURl = 'http://www.drivixcorp.com/api/';
@@ -24,10 +23,15 @@ export class SearchService {
         });
     }
 
-    workshopSearch(key) {
+    workshopSearch(key, token) {
         return new Promise((resolve, reject) => {
             this.http.get(this.apiURl + 'FilterWorkShop',  {
                 params: new HttpParams().set('text', key),
+                headers: new HttpHeaders({
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'token': token
+                })
             })
                 .subscribe(res => {
                     resolve(res);
@@ -37,10 +41,15 @@ export class SearchService {
         });
     }
 
-    sparePartsShopSearch(key) {
+    sparePartsShopSearch(key, token) {
         return new Promise((resolve, reject) => {
             this.http.get(this.apiURl + 'FilterSparesShop',  {
                 params: new HttpParams().set('text', key),
+                headers: new HttpHeaders({
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'token': token
+                })
             })
                 .subscribe(res => {
                     resolve(res);

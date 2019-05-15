@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NavController} from '@ionic/angular';
+import {LoadingController, NavController} from '@ionic/angular';
 import {AuthenticationService} from '../../api/authentication.service';
 import {Storage} from '@ionic/storage';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -30,7 +30,7 @@ export class RegisterPage {
     registration_form: FormGroup;
 
     // constructor
-    constructor(private Auth: AuthenticationService , public navCtrl: NavController , private storage: Storage , fb: FormBuilder) { 
+    constructor(private Auth: AuthenticationService , public navCtrl: NavController , private storage: Storage , fb: FormBuilder ,  public loadingController: LoadingController) {
         this.registration_form = fb.group({
             'email': ['', Validators.compose([Validators.required, Validators.pattern(/^(\d{10}|\w+@\w+\.\w{2,3})$/)])],
             'password': ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(15)])],
@@ -64,19 +64,28 @@ export class RegisterPage {
         });
     }
     // register
-    register() {
+    async register() {
+        // send request to the web service here
+        const loading = await this.loadingController.create({
+            message: 'Waiting ....',
+        });
+        loading.present();
             this.Auth.register(this.data)
             .then(success => {
                 AuthenticationService.User = success;
                 // @ts-ignore
                 this.storage.set('token', success.token);
+                // @ts-ignore
+                this.storage.set('user_name', success.name);
                 this.navCtrl.navigateForward('/members/menu/services');
+                loading.dismiss();
             })
             .catch(err => {
                 if(err.status == 500){
                     this.error_msg = "THIS E-MAIL ALREADY EXISTS";
                     this.errors=true;
                 }
+                loading.dismiss();
             });
     }
 }

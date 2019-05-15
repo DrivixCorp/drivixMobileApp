@@ -14,7 +14,7 @@ export class EditPage implements OnInit {
 
   token: any;
   carId: any;
-  car = {};
+  car: any = {};
 
   carFormGroup: FormGroup;
 

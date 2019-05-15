@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams , HttpHeaders} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +7,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 export class ProfileService {
 
     URl = 'http://www.drivixcorp.com/api/';
-  constructor(public http: HttpClient) { }
+    constructor(public http: HttpClient) { }
 
     // Get My Profile
     Profile(Token) {
@@ -40,5 +40,28 @@ export class ProfileService {
                     reject(err);
                 });
         });
+    }
+
+    // update image
+    updateImage (token , base64image) {
+
+        return new Promise((resolve, reject) => {
+            const httpOptions = {
+                headers: new HttpHeaders({
+                  'Content-Type': 'application/json',
+                })
+              };
+            const body = {
+                'image': base64image ,
+                'token': token
+            }
+            this.http.post(this.URl + 'setImage' , body , httpOptions)
+            .subscribe(res => {
+                resolve(res);
+            }, (err) => {
+                reject(err);
+            });
+        });
+
     }
 }

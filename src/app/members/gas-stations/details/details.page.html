@@ -19,7 +19,7 @@
       <ion-col size="9" class="name-container">
         <ion-row class="station-name"><h3>{{ stationObj.name }}</h3></ion-row>
         <ion-row class="station-rate">
-          <ion-col size="4">
+          <ion-col size="6">
             <h5>
               <span *ngFor="let star of rateRange; let i = index">
                 <i class="fas fa-star rated" *ngIf="stationObj.google_rate >= (i+1)"></i>
@@ -30,10 +30,10 @@
               </span>
             </h5>
           </ion-col>
-          <ion-col size="4"><h5>| Google Review</h5></ion-col>
+          <ion-col size="6"><h5>| Google Review</h5></ion-col>
         </ion-row>
         <ion-row class="station-rate">
-          <ion-col size="4">
+          <ion-col size="6">
             <h5>
               <span *ngFor="let star of rateRange; let i = index">
                 <i class="fas fa-star rated" *ngIf="stationObj.Drivix_rate >= (i+1)"></i>
@@ -44,9 +44,9 @@
               </span>
             </h5>
           </ion-col>
-          <ion-col size="4"><h5>| Drivix Reviews <span class="label-info">{{ stationObj.num_Drivix_review }}</span></h5></ion-col>
+          <ion-col size="6"><h5>| Drivix Reviews <span class="label-info" style="position: absolute; top: 0;">{{ stationObj.num_Drivix_review }}</span></h5></ion-col>
         </ion-row>
-        <ion-row class="station-address">
+        <ion-row class="station-address ion-padding">
           <h6> <ion-icon name="pin"></ion-icon> {{ stationObj.address }} | {{ stationObj.city }}</h6>
         </ion-row>
       </ion-col>

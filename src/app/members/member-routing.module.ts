@@ -16,6 +16,9 @@ const routes: Routes = [
   { path: 'spare-parts-shop/:sparePartsShopObj', loadChildren: './spare-parts-shops/details/details.module#DetailsPageModule' },
   { path: 'spare-parts-shops/list', loadChildren: './spare-parts-shops/list/list.module#ListPageModule' },
   { path: 'spare-parts-shops/map', loadChildren: './spare-parts-shops/map/map.module#MapPageModule' },
+  { path: 'winch-request', loadChildren: './winch-request/winch-request.module#WinchRequestPageModule' },
+  { path: 'products/list', loadChildren: './products/list/list.module#ListPageModule' },
+  { path: 'products/details/:productObj', loadChildren: './products/details/details.module#DetailsPageModule' },
 ];
 
 @NgModule({

@@ -13,7 +13,7 @@ export class MenuPage {
 
   selectedPath = '';
   serviceMenu = 'Services';
-
+  user_name = null;
   pages = [
     {
       title: 'Home',
@@ -33,24 +33,30 @@ export class MenuPage {
         {
           title: 'gas Station',
           url: '/members/menu/gas-stations-list',
-          icon: 'arrow-dropright'
         },
         {
           title: 'workshop',
           url: '/members/menu/workshops-list',
-          icon: 'arrow-dropright'
         }, {
           title: 'spares shop',
           url: '/members/menu/spare-parts-shops-list',
-          icon: 'arrow-dropright'
-        },
+        }
       ]
+    } , {
+      title: 'Products',
+      url: '/members/menu/products/all',
+    } , {
+      title: 'FAQ',
+      url: '/members/menu/faq',
     }
   ];
 
   constructor(private router: Router , public navCtrl: NavController , private storage: Storage) {
     this.router.events.subscribe((event:  RouterEvent) => {
       this.selectedPath = event.url;
+      storage.get('user_name').then((val) => {
+        this.user_name = val ;
+      });
     });
   }
 

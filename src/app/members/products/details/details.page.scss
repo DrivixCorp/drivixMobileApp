@@ -1,0 +1,62 @@
+ion-content {
+  --background: #f2f2f2;
+}
+.img-slider{
+  text-align: center;
+}
+.product-img img{
+  border-radius: 10px;
+}
+.product-name{
+  margin-top: 4px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  font-family: 'Raleway', sans-serif;
+}
+.product-brand{
+  color: #eeab10;
+  margin-top: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-family: 'Titillium Web', sans-serif;
+}
+.product-brand span{
+  color: #383a3e;
+  margin-top: 4px;
+  font-weight: normal;
+  text-transform: capitalize;
+  font-family: 'Titillium Web', sans-serif;
+}
+.description-card{
+  --background: white;
+  font-family: 'Titillium Web', sans-serif;
+}
+.description-card-header{
+  --background: #cccccc;
+}
+.description-card-header ion-card-subtitle{
+  color: #404040;
+  letter-spacing: 1px;
+  font-weight: bolder;
+}
+.description-card-content{
+  padding: 15px;
+}
+ion-chip{
+  width: 100%;
+  --background-color: #b3b3b3;
+  box-shadow: -1px 3px 16px -4px rgba(0,0,0,0.75);
+}
+ion-chip ion-label{
+  font-family: 'Titillium Web', sans-serif;
+}
+.ion-chip-price{
+  color: white;
+  background-color: #00b33c;
+}
+.active-status{
+  color: #00b33c;
+}
+.deactivated-status{
+  color: #cc0000;
+}

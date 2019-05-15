@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AlertController, NavController} from '@ionic/angular';
+import {AlertController, LoadingController, NavController} from '@ionic/angular';
 import {AuthenticationService} from '../../api/authentication.service';
 import { Storage } from '@ionic/storage';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -24,7 +24,8 @@ export class LoginPage {
 
   // functions
   constructor(private alertController: AlertController , private Auth: AuthenticationService ,
-              public navCtrl: NavController , private storage: Storage , fb: FormBuilder) {
+              public navCtrl: NavController , private storage: Storage , fb: FormBuilder ,
+              public loadingController: LoadingController) {
                 this.login_form = fb.group({
                   'email': [null, Validators.compose([Validators.required, Validators.pattern(/^(\d{10}|\w+@\w+\.\w{2,3})$/)])],
                   'password': [null, Validators.required]
@@ -53,13 +54,17 @@ submitForm() {
         });
     }
   // login function
-    login() {
+    async login() {
       // some validation here
         if (this.data.email == null || this.data.email === '') {
         } else {
           // console.log('email is set successfully' + this.data.email);
         }
         // send request to the web service here
+        const loading = await this.loadingController.create({
+            message: 'Waiting ....',
+        });
+        loading.present();
         this.Auth.Login(this.data)
             .then(success => {
                AuthenticationService.User = success;
@@ -67,12 +72,16 @@ submitForm() {
                 if (success) {
                     // @ts-ignore
                     this.storage.set('token', success.token);
+                    // @ts-ignore
+                    this.storage.set('user_name', success.name);
                     this.navCtrl.navigateForward('/members/menu/services');
                 }
+                loading.dismiss();
             })
             .catch(err => {
                 this.error_msg = "INCORRECT E-MAIL OR PASSWORD, TRY AGAIN";
                 this.errors=true;
+                loading.dismiss();
             });
     }
   // forget password function

@@ -117,10 +117,14 @@
 .station-comments-section{
 
 }
+ion-item-divider{
+  padding-left: 0px;
+}
 .station-comments-section-title{
   padding-left: 20px;
+  color: white;
   border-bottom: 2px solid #bababa;
-  //background-color: #bababa;
+  background-color: #1a1a1a;
 }
 .station-comments-section-title span{
   color: #1a1a1a;
@@ -151,6 +155,9 @@
   color: #ff4d4d;
   text-align: right;
 }
+.station-comment-estimate{
+  margin-left: 5px;
+}
 .station-comment-link{
   display: block;
   padding-left: 20px;
@@ -164,10 +171,11 @@
 }
 .station-comment-like{
   color: #595959;
-  padding-left: 6px;
+  //padding-left: 6px;
 }
 .new-comment-input{
   padding: 8px;
+  margin-left: 0px;
   background-color: #e6e6e6;
   font-family: 'Titillium Web', sans-serif;
 }
@@ -176,6 +184,8 @@
   font-size: 40px;
 }
 .replies{
+  padding: 5px;
+  border-top: 1.5px solid #e6e6e6;
   background-color: #f2f2f2;
 }
 .workshop-active{
@@ -194,4 +204,24 @@
 .no-workshop-data span{
   color: #808080;
   font-family: 'Titillium Web', sans-serif;
+}
+.new-comment-form{
+  padding: 5px;
+}
+.comment-submit-btn{
+  --border-radius: 2px;
+  --border-color: #df9d04;
+  font-family: 'Titillium Web', sans-serif;
+}
+.user-like{
+  color: #1a8cff;;
+}
+.edit-comment-input{
+  color: #333333;
+  background-color: #f2f2f2;
+  font-family: 'Titillium Web', sans-serif;
+}
+.comment-operations{
+  float: right;
+  text-align: right;
 }

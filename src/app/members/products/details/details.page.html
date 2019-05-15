@@ -1,0 +1,59 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button routerDirection="forward"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid color="primary">
+    <ion-row padding>
+      <ion-col size="10" offset="1">
+        <h3 class="product-name">{{ product.name }}</h3>
+        <h5 class="product-brand"><span>Brand : </span>{{ product.brand }}</h5>
+
+        <ion-row>
+          <ion-col size="12" class="img-slider">
+            <ion-slides pager="true">
+              <ion-slide class="product-img" *ngFor="let img of product.productimg">
+                <img src="{{ img.image }}">
+              </ion-slide>
+            </ion-slides>
+          </ion-col>
+        </ion-row>
+
+        <ion-card class="description-card">
+          <ion-card-header class="description-card-header">
+            <ion-card-subtitle>Product Description</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content class="description-card-content">
+            {{ product.description }}
+          </ion-card-content>
+        </ion-card>
+
+        <ion-row>
+          <ion-col size="5">
+            <ion-chip class="ion-chip-price">
+              <ion-icon name="pricetag"></ion-icon>
+              <ion-label>{{ product.price }} EGP</ion-label>
+            </ion-chip>
+          </ion-col>
+
+          <ion-col size="5" offset="1">
+            <ion-chip>
+              <ion-icon class="active-status" name="checkmark-circle" *ngIf="product.status==1"></ion-icon>
+              <ion-icon class="deactivated-status" name="close-circle" *ngIf="product.status==0"></ion-icon>
+              <ion-label *ngIf="product.status==1">Available</ion-label>
+              <ion-label *ngIf="product.status==0">Not available</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

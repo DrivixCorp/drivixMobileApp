@@ -117,10 +117,14 @@
 .station-comments-section{
 
 }
+ion-item-divider{
+  padding-left: 0px;
+}
 .station-comments-section-title{
   padding-left: 20px;
+  color: white;
   border-bottom: 2px solid #bababa;
-  //background-color: #bababa;
+  background-color: #1a1a1a;
 }
 .station-comments-section-title span{
   color: #1a1a1a;
@@ -140,6 +144,9 @@
   text-align: right;
   font-family: 'Titillium Web', sans-serif;
 }
+.sparePartsShop-times-card {
+  --background: #f2f2f2;
+}
 .station-comment-content{
   color: #333333;
   font-size: 14.5px;
@@ -150,6 +157,9 @@
   float: right;
   color: #ff4d4d;
   text-align: right;
+}
+.station-comment-estimate{
+  margin-left: 5px;
 }
 .station-comment-link{
   display: block;
@@ -164,10 +174,11 @@
 }
 .station-comment-like{
   color: #595959;
-  padding-left: 6px;
+  //padding-left: 6px;
 }
 .new-comment-input{
   padding: 8px;
+  margin-left: 0px;
   background-color: #e6e6e6;
   font-family: 'Titillium Web', sans-serif;
 }
@@ -176,22 +187,56 @@
   font-size: 40px;
 }
 .replies{
+  padding: 5px;
+  border-top: 1.5px solid #e6e6e6;
   background-color: #f2f2f2;
 }
-.sparePartsShop-active{
+.workshop-active{
   color: #009933;
 }
-.sparePartsShop-inactive{
+.workshop-inactive{
   color: #c0392b;
 }
-.sparePartsShop-times-card{
+.workshop-times-card{
   --background: #f2f2f2;
 }
-.no-sparePartsShop-data{
+.no-workshop-data{
   margin: auto;
   text-align: center;
 }
-.no-sparePartsShop-data span{
+.no-workshop-data span{
   color: #808080;
   font-family: 'Titillium Web', sans-serif;
+}
+.new-comment-form{
+  padding: 5px;
+}
+.comment-submit-btn{
+  --border-radius: 2px;
+  --border-color: #df9d04;
+  font-family: 'Titillium Web', sans-serif;
+}
+.user-like{
+  color: #1a8cff;;
+}
+.edit-comment-input{
+  color: #333333;
+  background-color: #f2f2f2;
+  font-family: 'Titillium Web', sans-serif;
+}
+.comment-operations{
+  float: right;
+  text-align: right;
+}
+.station-products ion-button,
+.station-map ion-button{
+  margin: 5px;
+  font-weight: bold;
+
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.station-products ion-icon,
+.station-map ion-icon {
+  padding-left: 5px;
 }

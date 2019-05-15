@@ -1,0 +1,62 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button routerDirection="forward"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="light"> PRODUCTS </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-grid color="primary">
+    <ion-row>
+      <ion-col size="10" offset="1">
+
+        <ion-item class="search-product" *ngIf="searchOption">
+          <ion-input type="text" placeholder="Search for product" [(ngModel)]="searchText" (ionChange)="searchProduct()"></ion-input>
+          <ion-label><ion-icon name="search"></ion-icon></ion-label>
+        </ion-item>
+
+        <ion-col size="12" class="separator">
+        </ion-col>
+
+        <ion-card class="product-card" *ngFor="let product of productsList">
+          <ion-item>
+            <ion-icon class="product-price-icon" name="pricetag" slot="start"></ion-icon>
+            <ion-label class="product-price">{{ product.price }} EGP</ion-label>
+            <ion-button class="product-view-button" fill="outline" slot="end" (click)="openDetailsPage(product)">View</ion-button>
+          </ion-item>
+
+          <ion-card-content class="product-card-content">
+
+            <img *ngIf="product.productimg.length>0" class="product-card-content-img" src="{{ product.productimg[0].image }}">
+            <img *ngIf="product.productimg.length==0" class="product-card-content-img" src="https://www.unionjacksa.com/images/clutches.jpg">
+
+            <ion-label class="product-name">{{ product.name }}</ion-label>
+            <ion-label class="product-brand">{{ product.brand }}</ion-label>
+
+          </ion-card-content>
+
+          <ion-item color="primary">
+            <ion-label class="product-shop"><i class="fas fa-store-alt"></i> {{ product.sparesshop.name }}</ion-label>
+            <ion-button class="product-visit-button" fill="default" color="light" slot="end" (click)="openShopDetailsPage(product.sparesshop)">VISIT</ion-button>
+          </ion-item>
+        </ion-card>
+
+      </ion-col>
+
+      <ion-col size="10" offset="1" *ngIf="productsList.length<1 && !initial">
+        <h2  class="not-fount-title">Sorry ,</h2>
+        <h5 class="not-fount-subtitle">No spare parts found.</h5>
+        <ion-card class="product-card not-fount">
+          <ion-icon class="not-fount-icon" name="information-circle-outline"></ion-icon>
+          <ion-label class="not-fount-label"> THIS SHOP DOES NOT HAVE any AVAILABLE SPARE PARTS NOW </ion-label>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

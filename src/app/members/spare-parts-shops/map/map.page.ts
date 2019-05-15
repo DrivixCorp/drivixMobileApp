@@ -1,14 +1,17 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import {NavController, Platform} from '@ionic/angular';
+import {ActionSheetController, NavController, Platform} from '@ionic/angular';
 
-import {filter, map} from 'rxjs/operators';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import {filter, map} from 'rxjs/operators';
+import { ModalController } from '@ionic/angular';
 import { MapsService } from '../../../api/maps.service';
 import { GoogleMap } from '@ionic-native/google-maps/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { AuthenticationService } from '../../../api/authentication.service';
 import {Subscription} from 'rxjs';
+import {MapDirectionModelComponent} from '../../../map-direction-model/map-direction-model.component';
+import {Router} from '@angular/router';
 
 declare var google;
 
@@ -21,7 +24,7 @@ export class MapPage implements OnInit {
 
   @ViewChild('map') mapElement: ElementRef;
 
-  // map: GoogleMap;
+  map: GoogleMap;
   locations: any;
   currentLat: any;
   currentLong: any;
@@ -29,89 +32,12 @@ export class MapPage implements OnInit {
   markers = new Array();
   destination: any = 'Egypt';
 
-  // test traking
-  map: any;
-  currentMapTrack = null;
-
-  isTracking = false;
-  trackedRoute = [];
-  previousTracks = [];
-
-  positionSubscription: Subscription;
-
-  // ________
-
-  constructor(public navCtrl: NavController, private shopsMap: MapsService, private plt: Platform,
-    private Auth: AuthenticationService, private storage: Storage, private http: Http , private geolocation: Geolocation) {
+  constructor(public navCtrl: NavController, private shopsMap: MapsService, private plt: Platform, public modalController: ModalController,
+              private Auth: AuthenticationService, private storage: Storage, private http: Http , private geolocation: Geolocation,
+              public actionSheetController: ActionSheetController, private readonly router: Router) {
       this.displayGoogleMap();
       this.getMarkers();
   }
-
-  // test traking
-  ionViewDidLoad() {
-    this.plt.ready().then(() => {
-      this.loadHistoricRoutes();
-    });
-  }
-
-  loadHistoricRoutes() {
-    this.storage.get('routes').then(data => {
-      if (data) {
-        this.previousTracks = data;
-      }
-    });
-  }
-
-  startTracking() {
-    console.log('start');
-    this.isTracking = true;
-    this.trackedRoute = [];
-
-    this.positionSubscription = this.geolocation.watchPosition()
-        .pipe(
-            filter((p) => p.coords !== undefined)
-        )
-        .subscribe(data => {
-          setTimeout(() => {
-            console.log(data);
-            this.trackedRoute.push({ lat: data.coords.latitude, lng: data.coords.longitude });
-            this.redrawPath(this.trackedRoute);
-          }, 0);
-        });
-  }
-
-  redrawPath(path) {
-    if (this.currentMapTrack) {
-      this.currentMapTrack.setMap(null);
-    }
-
-    if (path.length > 1) {
-      this.currentMapTrack = new google.maps.Polyline({
-        path: path,
-        geodesic: true,
-        strokeColor: '#ff00ff',
-        strokeOpacity: 1.0,
-        strokeWeight: 3
-      });
-      this.currentMapTrack.setMap(this.map);
-    }
-  }
-
-  stopTracking() {
-    const newRoute = { finished: new Date().getTime(), path: this.trackedRoute };
-    this.previousTracks.push(newRoute);
-    this.storage.set('routes', this.previousTracks);
-
-    this.isTracking = false;
-    this.positionSubscription.unsubscribe();
-    this.currentMapTrack.setMap(null);
-  }
-
-  showHistoryRoute(route) {
-    this.redrawPath(route);
-  }
-
-  // ________
 
   displayGoogleMap() {
 
@@ -251,7 +177,7 @@ export class MapPage implements OnInit {
   getMarkers() {
     this.geolocation.getCurrentPosition().then((resp) => {
       this.currentLocation = { lat: resp.coords.latitude, long: resp.coords.longitude };
-      this.shopsMap.getNearestSparesPartShops(this.currentLocation)
+      this.shopsMap.getNearestSparesPartShops(this.currentLocation,'')
           .then(async success => {
             success[10] = this.currentLocation;
             this.addMarkersMap(success);
@@ -265,7 +191,6 @@ export class MapPage implements OnInit {
   // add Markers
   addMarkersMap(markers) {
     for (let marker of markers) {
-
       let icon;
       if (!marker.distance) {
         icon = '../../../assets/images/icons/current-marker.png';
@@ -274,7 +199,7 @@ export class MapPage implements OnInit {
       }
 
       const location = new google.maps.LatLng(marker.lat, marker.long);
-      marker = new google.maps.Marker({
+      let new_marker = new google.maps.Marker({
         map: this.map,
         position: location,
         title: 'distance : ' + Number(marker.distance).toFixed(2),
@@ -282,32 +207,47 @@ export class MapPage implements OnInit {
         icon: icon,
       });
 
-      this.markers.push(marker);
+      this.markers.push(new_marker);
+
+      google.maps.event.addDomListener(new_marker, 'click', async () => {
+        const actionSheet = await this.actionSheetController.create({
+          buttons: [{
+            text: 'Track',
+            icon: 'navigate',
+            handler: async () => {
+              this.closeMapModal();
+              const modal = await this.modalController.create({
+                component: MapDirectionModelComponent,
+                componentProps: {
+                  'destLat': marker.lat,
+                  'destLong': marker.long
+                }
+              });
+              return await modal.present();
+            }
+          }, {
+            text: 'Station Information',
+            icon: 'information-circle-outline',
+            handler: () => {
+              this.closeMapModal();
+              const stationMarker = JSON.stringify(marker);
+              this.router.navigate(['/members/spare-parts-shop', stationMarker]);
+            }
+          }, {
+            text: 'Cancel',
+            icon: 'close',
+            role: 'cancel',
+            handler: () => {
+            }
+          }]
+        });
+        await actionSheet.present();
+      });
     }
   }
 
-  // Direction
-  calculateAndDisplayRoute() {
-    const directionsService = new google.maps.DirectionsService;
-    const directionsDisplay = new google.maps.DirectionsRenderer;
-    const map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 17,
-      center: {lat: 31.171087, lng: 31.2227556}
-    });
-
-    directionsDisplay.setMap(map);
-
-    directionsService.route({
-      origin: '',
-      destination: this.destination,
-      travelMode: 'DRIVING'
-    }, function(response, status) {
-      if (status === 'OK') {
-        directionsDisplay.setDirections(response);
-      } else {
-        window.alert('Directions request failed due to ' + status);
-      }
-    });
+  async closeMapModal() {
+    await this.modalController.dismiss();
   }
 
   async ngOnInit() {

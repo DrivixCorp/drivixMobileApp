@@ -9,6 +9,13 @@
 
 <ion-content padding>
 
+  <!-- fab placed to the top end -->
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="dark" (click)="openMapModal()" routerDirection="forward">
+      <ion-icon name="map"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
   <ion-grid>
     <ion-row>
 
@@ -19,8 +26,9 @@
       </ion-col>
 
       <ion-col size="12">
-        <ion-item>
-          <ion-searchbar [(ngModel)]="searchText" (ionChange)="searchForWorkshop()" type="text" placeholder="Search by workshop name" cancelButtonText="Custom Cancel"></ion-searchbar>
+        <ion-item class="search-product">
+          <ion-input [(ngModel)]="searchText" (ionChange)="searchForWorkshop()" type="text" placeholder="Search by workshop name" cancelButtonText="Custom Cancel"></ion-input>
+          <ion-label><ion-icon name="search"></ion-icon></ion-label>
         </ion-item>
       </ion-col>
 
@@ -33,7 +41,7 @@
 
       <ion-col size="12">
 
-        <ion-item-sliding *ngFor ="let workshop of workshopsList; let i = index">
+        <ion-item-sliding #WorkshopSlider *ngFor ="let workshop of workshopsList; let i = index">
 
           <ion-item class="listItem">
 
@@ -42,9 +50,10 @@
               <p class="itemAddress"> {{ workshop.location }} </p>
               <p class="itemAddress" *ngIf="!results"> {{ workshop.description }} </p>
               <p class="itemDistance" *ngIf="results"> {{ calculateDistance(workshop.distance) }} </p>
+              <br>
             </ion-label>
 
-            <ion-note slot="end" color="primary">
+            <ion-note style="position: absolute;bottom: 0;right: 35px;font-size: 12px;" slot="end" color="primary">
               RATE :
               <i class="fas fa-star" *ngIf="workshop.Drivix_rate>=1" ></i>
               <i class="fas fa-star" *ngIf="workshop.Drivix_rate>=2" ></i>
@@ -58,8 +67,7 @@
               <i *ngIf="workshop.Drivix_rate<=3" class="far fa-star"></i>
               <i *ngIf="workshop.Drivix_rate<=4" class="far fa-star"></i>
             </ion-note>
-
-            <span class="itemSwap" slot="end"><ion-icon name="undo"></ion-icon></span>
+            <span style="position: absolute;bottom: 5px; right: 5px;" class="itemSwap" slot="end"><ion-icon name="undo"></ion-icon></span>
           </ion-item>
 
           <ion-item-options side="end">

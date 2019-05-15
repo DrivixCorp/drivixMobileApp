@@ -1,7 +1,7 @@
 <ion-header no-shadow no-border>
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button routerLink="/members/menu/spare-parts-shops-list" routerDirection="forward"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,15 +12,15 @@
 
       <ion-col size="3"class="logo-container">
         <div class="station-logo">
-          <img src="https://designcontest-com-designcontest.netdna-ssl.com/data/contests/22073/entries/big_5255a508d0841551.png">
+          <img src="https://cdn3.vectorstock.com/i/thumb-large/44/97/car-parts-store-vector-17184497.jpg">
         </div>
       </ion-col>
 
       <ion-col size="9" class="name-container">
         <ion-row class="station-name"><h3>{{ sparePartsShopObj.name }}</h3></ion-row>
-        <ion-row class="station-description"><span>{{ sparePartsShopObj.description }}</span></ion-row>
+        <ion-row class="station-description"><span style="text-align: left !important;font-size: 14px;">{{ sparePartsShopObj.description.substring(0,150) + ' ... ' }}</span></ion-row>
         <ion-row class="station-rate" *ngIf="sparePartsShopObj.google_rate">
-          <ion-col size="4">
+          <ion-col size="6">
             <h5>
               <span *ngFor="let star of rateRange; let i = index">
                 <i class="fas fa-star rated" *ngIf="sparePartsShopObj.google_rate >= (i+1)"></i>
@@ -31,10 +31,10 @@
               </span>
             </h5>
           </ion-col>
-          <ion-col size="4"><h5>| Google Review</h5></ion-col>
+          <ion-col size="6"><h5>| Google Review</h5></ion-col>
         </ion-row>
         <ion-row class="station-rate">
-          <ion-col size="4">
+          <ion-col size="6">
             <h5>
               <span *ngFor="let star of rateRange; let i = index">
                 <i class="fas fa-star rated" *ngIf="sparePartsShopObj.Drivix_rate >= (i+1)"></i>
@@ -45,9 +45,9 @@
               </span>
             </h5>
           </ion-col>
-          <ion-col size="4"><h5>| Drivix Reviews <span class="label-info">{{ sparePartsShopObj.num_Drivix_review }}</span></h5></ion-col>
+          <ion-col size="6"><h5>| Drivix Reviews <span style="position: absolute; top: 0;" class="label-info">{{ sparePartsShopObj.num_Drivix_review }}</span></h5></ion-col>
         </ion-row>
-        <ion-row class="station-address" *ngIf="sparePartsShopObj.rolelocation">
+        <ion-row class="station-address" *ngIf="sparePartsShopObj.rolelocation.length > 0">
           <h6> <ion-icon name="pin"></ion-icon> {{ sparePartsShopObj.rolelocation[0].location }} </h6>
         </ion-row>
       </ion-col>
@@ -62,10 +62,10 @@
       <ion-col size="12" class="user-rate">
 
         <span *ngFor="let star of rateRange; let i = index">
-          <ion-icon name="star" size="large" color="primary" *ngIf="rateData.rate >= (i+1)"></ion-icon>
+          <ion-icon name="star" size="large" color="primary" *ngIf="rateData.stars >= (i+1)"  (click)="submitRating(i+1)"></ion-icon>
         </span>
         <span *ngFor="let star of rateRange; let i = index">
-          <ion-icon name="star-outline" size="large" color="medium" *ngIf="rateData.rate <= (i)"></ion-icon>
+          <ion-icon name="star-outline" size="large" color="medium" *ngIf="rateData.stars <= (i)"  (click)="submitRating(i+1)"></ion-icon>
         </span>
 
       </ion-col>
@@ -110,7 +110,16 @@
       </ion-col>
 
       <ion-col size="12" class="station-map" (click)="showMapModule(sparePartsShopObj.lat , sparePartsShopObj.long)">
-        <ion-button  expand="block" color="primary">open in map<i class="far fa-map"></i>
+        <ion-button expand="block" color="primary">
+          open in map
+          <ion-icon name="map"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="12" class="station-products">
+        <ion-button expand="block" color="primary" (click)="openProductsPage(sparePartsShopObj.id)">
+          Products
+          <ion-icon name="basket"></ion-icon>
         </ion-button>
       </ion-col>
 
@@ -118,7 +127,7 @@
         <ion-slides pager="true">
 
           <ion-slide class="station-img" *ngFor="let img of sparePartsShopObj.roleimgs">
-            <img src="{{ img }}">
+            <img src="{{ img.image }}">
           </ion-slide>
 
         </ion-slides>
@@ -129,7 +138,7 @@
 
       <ion-col size="12" color="light">
         <ion-toolbar color="light">
-          <ion-segment [(ngModel)]="sparePartsShop" color="tertiary">
+          <ion-segment [(ngModel)]="sparePartsShop" color="dark">
             <ion-segment-button href="#branch" value="branch">
               <ion-label>Branches</ion-label>
             </ion-segment-button>
@@ -144,19 +153,16 @@
         <ion-list *ngSwitchCase="'branch'">
 
           <ion-item *ngFor="let branch of sparePartsShopObj.rolelocation">
-            <ion-col size="1">
-              <i [className]=" (sparePartsShopObj.lock == 1) ? 'fas fa-circle sparePartsShop-active' : 'fas fa-circle sparePartsShop-inactive'"></i>
-            </ion-col>
-            <ion-col size="8">
+            <ion-col size="7">
               <label class="petrol-label">{{ branch.location }}</label>
             </ion-col>
-            <ion-col size="2" class="property-availability">
+            <ion-col size="4" class="property-availability" >
               <ion-button color="medium">OPEN <ion-icon name="map"></ion-icon></ion-button>
             </ion-col>
           </ion-item>
 
-          <ion-col size="11" offset="1" class="no-sparePartsShop-data" *ngIf="!sparePartsShopObj.rolelocation">
-            <span><i class="fas fa-minus-circle"></i> There is no branch available.</span>
+          <ion-col size="11" offset="1" class="no-sparePartsShop-data" *ngIf="sparePartsShopObj.rolelocation.length < 1">
+            <span><i class="fas fa-minus-circle"></i> There is no branchs available.</span>
           </ion-col>
 
         </ion-list>
@@ -171,14 +177,13 @@
               <label class="petrol-label">{{ contact.phone }}</label>
             </ion-col>
           </ion-item>
-
-          <ion-col size="11" offset="1" class="no-sparePartsShop-data" *ngIf="!sparePartsShopObj.rolephone || !sparePartsShopObj.rolephone.length > 0">
+          <ion-col size="11" offset="1" class="no-sparePartsShop-data" *ngIf="sparePartsShopObj.rolephone.length < 1">
             <span><i class="fas fa-minus-circle"></i> There is no contact information.</span>
           </ion-col>
 
         </ion-list>
       </ion-col>
-
+      
       <ion-col size="12" class="separator">
       </ion-col>
 
@@ -189,118 +194,77 @@
             <h5><i class="fas fa-comments"></i> comments</h5>
           </ion-col>
 
-          <h4>{{ role_comments }}</h4>
-          <ion-item-divider *ngFor="let comment of role_comments_">
+          <ion-item-divider *ngFor="let role_comment of comments; let i = index">
 
-            <ion-col size="12" class="station-comments" padding="10px">
+            <ion-col size="12" class="station-comments">
+
               <ion-row>
                 <ion-col size="6">
-                  <span class="station-comment-username">{{ comment.username }}</span>
-                  <span class="station-comment-username">{{ comment.username }}</span>
+                  <span class="station-comment-username">{{ role_comment.username }}</span>
                 </ion-col>
-
                 <ion-col size="6">
-                  <span class="station-comment-time">{{ comment.date }}</span>
+                  <span class="station-comment-time">{{ role_comment.date }}</span>
                 </ion-col>
               </ion-row>
 
               <ion-row>
-                <ion-col size="10" class="station-comment-content">
-                  <span>{{ comment.comment }}</span>
+                <ion-col size="9" class="station-comment-content">
+                  <span>{{ role_comment.comment }}</span>
                 </ion-col>
 
-                <ion-col size="2" class="station-comment-like">
-                  <span class="station-comment-dislike"><i class="fas fa-thumbs-down"></i> {{ comment.likesCount }}</span>
-                  <span class="station-comment-like"><i class="fas fa-thumbs-up"></i> {{ comment.dislikesCount }}</span>
+                <ion-col size="3" class="station-comment-like">
+                  <span *ngIf="role_comment.userToken == token" (click)="presentCommentOperationActionSheet(i)"><ion-icon name="more"></ion-icon></span>
                 </ion-col>
               </ion-row>
 
               <ion-row>
-                <ion-col size="12" class="station-comment-link">
-                  <span>{{ comment.replayCount }} reply</span>
-                  <span *ngIf="comment.userToken == getToken()">delete</span>
+                <ion-col size="12" class="station-comment-like">
+                  <span class="station-comment-estimate station-comment-like" (click)="estimateComment(role_comment, 1, i)"><i class="fas fa-thumbs-up" [class.user-like]="userLike(role_comment.commentlikes)"></i> {{ role_comment.likesCount }}</span>
+                  <span class="station-comment-estimate station-comment-like" (click)="estimateComment(role_comment, 0, i)"><i class="fas fa-thumbs-down" [class.user-like]="userDislike(role_comment.commentlikes)"></i> {{ role_comment.dislikesCount }}</span>
                 </ion-col>
               </ion-row>
+
+              <ion-col size="12" class="separator"></ion-col>
+
+              <div class="replies" *ngFor="let comment_replay of role_comment.replay; let r = index">
+
+                <ion-row class="">
+                  <ion-col offset="2">
+                    <span class="station-comment-username">{{ comment_replay.username }}</span>
+                    <span class="station-comment-time">{{ comment_replay.created_at }}</span>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col offset="2" size="8" class="station-comment-content">
+                    <span>{{ comment_replay.comment }}</span>
+                  </ion-col>
+
+                  <ion-col size="2" class="station-comment-link">
+                    <span class="comment-operations" *ngIf="comment_replay.userToken == token" (click)="presentReplyOperationActionSheet(i, r)"><ion-icon name="more"></ion-icon></span>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row class="">
+                  <ion-col offset="4" size="8" class="station-comment-like">
+                    <span class="station-comment-estimate station-comment-like" (click)="estimateReply(i, r, 1)"><i class="fas fa-thumbs-up" [class.user-like]="userLike(comment_replay.commentlikes)"></i> {{ comment_replay.replayLikesCount }}</span>
+                    <span class="station-comment-estimate station-comment-like" (click)="estimateReply(i, r, 0)"><i class="fas fa-thumbs-down" [class.user-like]="userDislike(comment_replay.commentlikes)"></i> {{ comment_replay.replayDislikesCount }}</span>
+                  </ion-col>
+                </ion-row>
+              </div>
+
             </ion-col>
 
           </ion-item-divider>
 
-<!--          <ion-item-divider class="replies">-->
-<!--            <ion-col offset="2">-->
-<!--              <ion-row>-->
-<!--                <ion-col >-->
-<!--                  <span class="station-comment-username">Mr. Loyal Thiel</span>-->
-<!--                  <span class="station-comment-time">10 Feb 2019 | 06:17</span>-->
-<!--                </ion-col>-->
-
-<!--                <ion-col size="6">-->
-<!--                  <span class="station-comment-time">10 Feb 2019 | 06:17</span>-->
-<!--                </ion-col>-->
-<!--              </ion-row>-->
-
-<!--              <ion-row>-->
-<!--                <ion-col size="10" class="station-comment-content">-->
-<!--                  <span>At qui et et eaque ullam molestias.</span>-->
-<!--                </ion-col>-->
-
-<!--                <ion-col size="2" class="station-comment-like">-->
-<!--                  <span class="station-comment-dislike"><i class="fas fa-thumbs-down"></i> 1</span>-->
-<!--                  <span class="station-comment-like"><i class="fas fa-thumbs-up"></i> 9</span>-->
-<!--                </ion-col>-->
-<!--              </ion-row>-->
-
-<!--              <ion-row>-->
-<!--                <ion-col size="12" class="station-comment-link">-->
-<!--                  <span>delete</span>-->
-<!--                </ion-col>-->
-<!--              </ion-row>-->
-
-<!--            </ion-col>-->
-<!--          </ion-item-divider>-->
-
-<!--          <ion-item-divider>-->
-<!--            <ion-col size="12" class="station-comments" padding="10px">-->
-<!--              <ion-row>-->
-<!--                <ion-col size="6">-->
-<!--                  <span class="station-comment-username">Ibrahim Mosciski</span>-->
-<!--                </ion-col>-->
-
-<!--                <ion-col size="6">-->
-<!--                  <span class="station-comment-time">6 Oct 2019 | 10:16</span>-->
-<!--                </ion-col>-->
-<!--              </ion-row>-->
-
-<!--              <ion-row>-->
-<!--                <ion-col size="10" class="station-comment-content">-->
-<!--                  <span>Est consequatur vero provident possimus aut odit.</span>-->
-<!--                </ion-col>-->
-
-<!--                <ion-col size="2" class="station-comment-like">-->
-<!--                  <span class="station-comment-dislike"><i class="fas fa-thumbs-down"></i> 4</span>-->
-<!--                  <span class="station-comment-like"><i class="fas fa-thumbs-up"></i> 13</span>-->
-<!--                </ion-col>-->
-<!--              </ion-row>-->
-
-<!--              <ion-row>-->
-<!--                <ion-col size="12" class="station-comment-link">-->
-<!--                  <span>reply</span>-->
-<!--                  <span>delete</span>-->
-<!--                </ion-col>-->
-<!--              </ion-row>-->
-<!--            </ion-col>-->
-<!--          </ion-item-divider>-->
-
-          <ion-col size="11">
-            <ion-item>
-              <ion-textarea clearOnEdit="true" placeholder="Write comment" class="new-comment-input"></ion-textarea>
-            </ion-item>
-          </ion-col>
-          <ion-col size="1">
-            <ion-icon class="new-comment-send" name="send"></ion-icon>
+          <ion-col size="12" class="new-comment-form">
+            <ion-textarea [(ngModel)]="newComment" placeholder="Write comment" class="new-comment-input"></ion-textarea>
+            <ion-button expand="block" color="medium" shape="round" type="submit" class="comment-submit-btn" (click)="addComment()">SEND</ion-button>
           </ion-col>
 
         </ion-row>
       </ion-col>
+
     </ion-row>
   </ion-grid>
 </ion-content>

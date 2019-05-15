@@ -1,3 +1,19 @@
+ion-content {
+  --background: #f2f2f2;
+}
+.search-product {
+  color: #666666;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Titillium Web', sans-serif;
+  box-shadow: 3px 5px 34px -13px rgba(0,0,0,0.75);
+}
+
+.search-product ion-icon {
+  color: #d9d9d9;
+  font-size: 22px;
+}
+//
 ion-searchbar{
   --color: #ffffff;
   --background: #383a3e;
@@ -16,12 +32,14 @@ ion-searchbar{
   font-family: 'Raleway', sans-serif;
 }
 ion-item-sliding{
+  border-radius: 8px;
   margin-bottom: 13px;
+  box-shadow: 1px 3px 15px 0px rgba(179,179,179,1);
 }
 .listItem{
+  --background: #fff;
   white-space: normal;
-  --background: #f2f2f2;
-  border-left: 3px solid #b3b3b3;
+  border-bottom: 3px solid #919191;
 }
 .listItem ion-avatar{
   background-color: white;

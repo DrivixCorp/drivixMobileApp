@@ -14,7 +14,7 @@ ion-title{
     display: inline-block;
     border-radius: 10px;
     border: 1px solid #e6e6e6;
-    box-shadow: 2px 2px 2px 1px #d9d9d9;
+    box-shadow: 5px 8px 23px -13px rgba(77,77,77,1);
 }
 .service img{
     width: 70px;
@@ -70,14 +70,15 @@ ion-slide h1{
     left: 0;
  }
 .services-subtitle{
-    margin: auto;
-    text-align: center;
-    padding: 5px;
-    margin-top: 20px;
-    background-color: #1b1b1b;
-    border-radius: 0px;
-    color: white;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 16px;   
     width: 80%;
+    color: white;
+    padding: 6px;
+    margin: auto;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    letter-spacing: 1px;
+    background-color: #1b1b1b;
+    font-family: 'Raleway', sans-serif;
 }

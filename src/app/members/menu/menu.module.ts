@@ -19,6 +19,8 @@ const routes: Routes = [
       { path: 'workshops-list', loadChildren: '../workshops/list/list.module#ListPageModule' },
       { path: 'spare-parts-shops-list', loadChildren: '../spare-parts-shops/list/list.module#ListPageModule' },
       { path: 'cars', loadChildren: '../cars/index/index.module#IndexPageModule' },
+      { path: 'faq', loadChildren: '../faq/faq.module#FaqPageModule' },
+      { path: 'products/:parameter', loadChildren: '../products/list/list.module#ListPageModule' },
     ]
   },
   {

@@ -1,0 +1,119 @@
+ion-content {
+  --background: #f2f2f2;
+}
+
+.product-card {
+  margin-top: 20px;
+  box-shadow: 6px 7px 35px -12px rgba(87,87,87,1);
+}
+
+.product-card,
+.product-card-content {
+  text-align: center;
+  --background: white;
+}
+
+.product-price,
+.product-shop
+{
+  letter-spacing: 1px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.product-price {
+  color: #4d4d4d;
+  font-size: 15px;
+}
+
+.product-shop {
+  color: #ffffff;
+  font-size: 14.5px;
+  font-weight: bold;
+}
+
+.product-price-icon {
+  margin-right: 3px;
+}
+
+.product-name {
+  display: block;
+  font-size: 15px;
+  margin-top: 4px;
+  font-weight: bolder;
+  text-transform: capitalize;
+  font-family: 'Raleway', sans-serif;
+}
+
+.product-brand {
+  display: block;
+  color: #eeab10;
+  font-size: 15.5px;
+  margin-top: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.product-view-button,
+.product-visit-button {
+  width: 55px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+}
+
+.product-visit-button {
+  color: #4d4d4d;
+  margin-left: 3px;
+  --background-color: white;
+}
+
+.not-fount {
+  padding: 10px;
+  margin-top: 50px;
+}
+
+.not-fount-icon,
+.not-fount-label {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+}
+
+.not-fount-icon {
+  font-size: 18px;
+}
+
+.not-fount-title {
+  margin: auto;
+  color: #df9d04;
+  padding-top: 60px;
+  font-weight: bolder;
+  letter-spacing: 1.2px;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.not-fount-subtitle {
+  margin: auto;
+  color: #666666;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.search-product {
+  color: #666666;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: 'Titillium Web', sans-serif;
+  box-shadow: 3px 5px 34px -13px rgba(0,0,0,0.75);
+}
+
+.search-product ion-icon {
+  color: #d9d9d9;
+  font-size: 22px;
+}
+
+.separator{
+  padding: 0px;
+  margin-top: 20px;
+  background-color: #bfbfbf;
+}

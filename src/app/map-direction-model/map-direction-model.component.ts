@@ -53,6 +53,7 @@ export class MapDirectionModelComponent implements OnInit {
       this.directionsDisplay.preserveViewport = true;
       this.directionsDisplay.setMap(this.map);
       this.calcRoute();
+      // this.startTracking();
     }).catch((error) => {
       console.log('Error getting location', error);
     });
@@ -74,9 +75,7 @@ export class MapDirectionModelComponent implements OnInit {
       if (status === google.maps.DirectionsStatus.OK) {
         this.directionsDisplay.preserveViewport = true;
         this.directionsDisplay.setDirections(response);
-        this.directionsDisplay.setMap(this.map);
-        this.startTracking();
-      } else {
+        this.directionsDisplay.setMap(this.map); } else {
         console.log( 'Directions Request from ' + start.toUrlValue(6) + ' to ' + end.toUrlValue(6) + ' failed: ' + status);
       }
     });
@@ -101,7 +100,7 @@ export class MapDirectionModelComponent implements OnInit {
   async presentLoading() {
     const loading = await this.loadingController.create({
       message: 'Loading map ...',
-      duration: 3000
+      duration: 5000
     });
     await loading.present();
     const { role, data } = await loading.onDidDismiss();
